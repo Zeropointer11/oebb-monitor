@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start-server" : "node src/server/server.js",
+    "start": "ng serve --proxy-config src/proxy.conf.json --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,8 +19,14 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "@auth0/angular-jwt": "^5.0.2",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.0",
+    "express": "^4.17.1",
+    "oebb": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
+    "url-polyfill": "^1.1.12",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
