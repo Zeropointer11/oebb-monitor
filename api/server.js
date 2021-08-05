@@ -8,8 +8,8 @@ var oebb = require("oebb")
 // Create new instance of the express server
 var app = express();
 
-// Define the JSON parser as a default way 
-// to consume and produce data through the 
+// Define the JSON parser as a default way
+// to consume and produce data through the
 // exposed APIs
 app.use(bodyParser.json());
 
@@ -20,9 +20,11 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 // Init the server
-var server = app.listen(process.env.PORT || 3000, function () {
-    var port = server.address().port;
-    console.log("App now running on port", port);
+const port = process.env.PORT || 3000;
+var server = app.listen(port, function () {
+    let sHost = server.address().address;
+    let sPort = server.address().port;
+    console.log(`App now running on http://${sHost}:${sPort};`,server.address());
 });
 
 /*  "/api/status"
