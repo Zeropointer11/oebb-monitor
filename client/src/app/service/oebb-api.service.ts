@@ -19,7 +19,7 @@ export class OebbApiService {
   private base_url = 'api/'
   private lastLoginResponse? : LoginResponse;
 
-  private requestHeaders = new HttpHeaders({ 
+  private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     'Chanel' : 'inet',
   });
@@ -30,12 +30,12 @@ export class OebbApiService {
     ) { }
 
   searchStation(query: string, opt?: StationSearchOptions) : Observable<Array<Station>> {
-    
+
     if (query.length == 0) {
       throw new Error('missing or invalid `query` parameter')
     }
     const options = opt !== undefined ? opt: new StationSearchOptions(1)
-    
+
     const url = '/api/station/search'
     return this.http.get<Array<Station>>(url,{
       params: {
@@ -43,7 +43,7 @@ export class OebbApiService {
         results: options.results
       }
     })
-    
+
 /*
     return this.auth().pipe(
       mergeMap(_ => this._searchStation(query, options))
@@ -57,12 +57,12 @@ export class OebbApiService {
     }
     else {
       return of(this.lastLoginResponse!)
-    }  
+    }
   }
 
   private init(): Observable<LoginResponse> {
     const url = `${this.base_url}domain/v4/init`
-    return this.http.get<LoginResponse>(url, 
+    return this.http.get<LoginResponse>(url,
     {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     })
@@ -83,7 +83,7 @@ export class OebbApiService {
     .pipe(
       tap(response => {
         console.log(response);
-        
+
       })
     )
   }
