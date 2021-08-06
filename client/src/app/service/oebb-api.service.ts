@@ -35,7 +35,7 @@ export class OebbApiService {
       throw new Error('missing or invalid `query` parameter')
     }
     const options = opt !== undefined ? opt: new StationSearchOptions(1)
-
+/*
     const url = '/api/station/search'
     return this.http.get<Array<Station>>(url,{
       params: {
@@ -43,12 +43,13 @@ export class OebbApiService {
         results: options.results
       }
     })
+    */
 
-/*
+
     return this.auth().pipe(
       mergeMap(_ => this._searchStation(query, options))
     )
-    */
+
   }
 
   auth(): Observable<LoginResponse>  {
@@ -62,13 +63,17 @@ export class OebbApiService {
 
   private init(): Observable<LoginResponse> {
     const url = `${this.base_url}domain/v4/init`
-    return this.http.get<LoginResponse>(url,
+    return this.http.get(url,
     {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
     })
     .pipe(
-      tap(response => {
+      map(x => new LoginResponse(x)),
+      tap((response : LoginResponse) => {
         console.log(response);
+
         this.lastLoginResponse = response;
         this.updateHeader();
       })
@@ -81,9 +86,11 @@ export class OebbApiService {
       headers: this.requestHeaders
     })
     .pipe(
+      map(x => {
+        return x.map(s => new Station(s))
+      }),
       tap(response => {
         console.log(response);
-
       })
     )
   }
@@ -101,7 +108,6 @@ export class OebbApiService {
   private updateHeader() {
     if(this.lastLoginResponse !== null && this.lastLoginResponse !== undefined ) {
       this.requestHeaders = this.requestHeaders.set('AccessToken', this.lastLoginResponse.getAccessToken());
-      this.requestHeaders = this.requestHeaders.set('User-Agent', 'oebb-hafas');
       this.requestHeaders = this.requestHeaders.set('x-ts-supportid', `WEB_${this.lastLoginResponse.supportId}`);
       this.requestHeaders = this.requestHeaders.set("session", this.lastLoginResponse.sessionId.replace('session:', ''));
     }

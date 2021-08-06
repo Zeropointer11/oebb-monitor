@@ -1,7 +1,7 @@
 {
     "/api/*": {
-        "target": "http://api:3000",
-        "secure": false,
+        "target": "https://tickets.oebb.at",
+        "secure": true,
         "logLevel": "debug",
         "changeOrigin": true
     }
