@@ -11,12 +11,11 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Station } from '../models/station.model';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class OebbApiService {
-
-  private base_url = 'api/'
   private lastLoginResponse? : LoginResponse;
 
   private requestHeaders = new HttpHeaders({
@@ -26,7 +25,6 @@ export class OebbApiService {
 
   constructor(
     private http : HttpClient,
-    //private jwtHelper : JwtHelperService
     ) { }
 
   searchStation(query: string, opt?: StationSearchOptions) : Observable<Array<Station>> {
@@ -35,21 +33,9 @@ export class OebbApiService {
       throw new Error('missing or invalid `query` parameter')
     }
     const options = opt !== undefined ? opt: new StationSearchOptions(1)
-/*
-    const url = '/api/station/search'
-    return this.http.get<Array<Station>>(url,{
-      params: {
-        query: query,
-        results: options.results
-      }
-    })
-    */
-
-
     return this.auth().pipe(
       mergeMap(_ => this._searchStation(query, options))
     )
-
   }
 
   auth(): Observable<LoginResponse>  {
@@ -62,7 +48,7 @@ export class OebbApiService {
   }
 
   private init(): Observable<LoginResponse> {
-    const url = `${this.base_url}domain/v4/init`
+    const url = `/api/auth`
     return this.http.get(url,
     {
       headers: new HttpHeaders({
@@ -72,32 +58,42 @@ export class OebbApiService {
     .pipe(
       map(x => new LoginResponse(x)),
       tap((response : LoginResponse) => {
-        console.log(response);
-
+        console.log('authResponse:', response);
         this.lastLoginResponse = response;
         this.updateHeader();
       })
     )
   }
 
-  private _searchStation(query: string, opt: StationSearchOptions) : Observable<Array<Station>> {
-    const url = `${this.base_url}hafas/v1/stations`
+  private _searchStation(name: string, opt: StationSearchOptions) : Observable<Array<Station>> {
+    const url = `/api/station/search`
     return this.http.get<Array<Station>>(url, {
+      params: {
+        name: name,
+        results: opt.results
+      },
       headers: this.requestHeaders
     })
     .pipe(
-      map(x => {
-        return x.map(s => new Station(s))
-      }),
-      tap(response => {
-        console.log(response);
-      })
+      map(x => x.map(s => new Station(s))),
+      tap(response => console.log('stationSearch:', response))
     )
   }
 
   private isTokenExpired(): Boolean {
     if(this.lastLoginResponse !== null && this.lastLoginResponse !== undefined) {
-      return false;
+      const token = this.lastLoginResponse.getAccessToken();
+      const helper = new JwtHelperService();
+      const isExpired = helper.isTokenExpired(token);
+      console.log('isTokenExpired', isExpired);
+      return isExpired;
+      /*
+      const { exp } = jwt.decode(token) as {
+        exp: number;
+      };
+      const expirationDatetimeInSeconds = exp * 1000;
+      return Date.now() >= expirationDatetimeInSeconds;
+      */
       //return this.jwtHelper.isTokenExpired(this.lastLoginResponse.getAccessToken())
     }
     else {

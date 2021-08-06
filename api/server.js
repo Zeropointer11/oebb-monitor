@@ -1,23 +1,22 @@
-// Use Express
 var express = require("express");
-// Use body-parser
-var bodyParser = require("body-parser");
-
-var oebb = require("oebb")
-
 // Create new instance of the express server
 var app = express();
 
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }))
+
+// parse application/json
 // Define the JSON parser as a default way
 // to consume and produce data through the
 // exposed APIs
-app.use(bodyParser.json());
+app.use(express.json())
+
 
 // Create link to Angular build directory
 // The `ng build` command will save the result
 // under the `dist` folder.
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+//var distDir = __dirname + "/dist/";
+//app.use(express.static(distDir));
 
 // Init the server
 const port = process.env.PORT || 3000;
@@ -27,6 +26,14 @@ var server = app.listen(port, function () {
     console.log(`App now running on http://${sHost}:${sPort};`,server.address());
 });
 
+/*
+* "/"
+* GET: Get Hello World!
+*/
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
 /*  "/api/status"
  *   GET: Get server status
  *   PS: it's just an example, not mandatory
@@ -35,13 +42,6 @@ app.get("/api/status", function (req, res) {
     res.status(200).json({ status: "UP" });
 });
 
-app.get("/api/station/search", function (req, res){
-    let quey = req.query.query;
-    let results = req.query.results;
-    console.log(quey);
-    console.log(results);
+var oebb = require('./oebb/oebb')
 
-    oebb.stations.search(quey, {
-        results: results
-    }).then( value => res.status(200).json(value));
-})
+app.use('/api', oebb);
