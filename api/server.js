@@ -2,6 +2,11 @@ var express = require("express");
 // Create new instance of the express server
 var app = express();
 
+var cors = require('cors');
+
+//enable CORS
+app.use(cors());
+
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
 

@@ -9,6 +9,7 @@ import { catchError, last, map, mergeMap, tap } from 'rxjs/operators';
 import { LoginResponse } from '../models/login.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Station } from '../models/station.model';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -16,6 +17,7 @@ import { Station } from '../models/station.model';
   providedIn: 'root'
 })
 export class OebbApiService {
+  private baseUrl = environment.baseURL;
   private lastLoginResponse? : LoginResponse;
 
   private requestHeaders = new HttpHeaders({
@@ -48,7 +50,7 @@ export class OebbApiService {
   }
 
   private init(): Observable<LoginResponse> {
-    const url = `/api/auth`
+    const url = `${this.baseUrl}/api/auth`
     return this.http.get(url,
     {
       headers: new HttpHeaders({
@@ -66,7 +68,7 @@ export class OebbApiService {
   }
 
   private _searchStation(name: string, opt: StationSearchOptions) : Observable<Array<Station>> {
-    const url = `/api/station/search`
+    const url = `${this.baseUrl}/api/station/search`
     return this.http.get<Array<Station>>(url, {
       params: {
         name: name,

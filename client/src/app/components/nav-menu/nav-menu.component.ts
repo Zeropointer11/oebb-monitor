@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-menu.component.less']
 })
 export class NavMenuComponent implements OnInit {
+
+  title = environment.title;
 
   constructor() { }
 
