@@ -7,7 +7,8 @@ export class Station {
   public number: string;
   public name: string;
   public meta: string | null;
-  public location: Gps;
+  public location: Gps | null;
+
   constructor(stationResponse: any) {
     this.number = stationResponse.number;
     this.name = stationResponse.name;

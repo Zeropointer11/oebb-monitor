@@ -1,7 +1,7 @@
 import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { StationSearchOptions } from '../models/request.model';
+import { StationSearchOptions, TravelActionRequest } from '../models/request.model';
 
 import { Observable, of } from 'rxjs';
 import { catchError, last, map, mergeMap, tap } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { LoginResponse } from '../models/login.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Station } from '../models/station.model';
 import { environment } from 'src/environments/environment';
+import { TravelAction, TravelActionResponse } from '../models/travelaction.model';
 
 
 
@@ -29,8 +30,15 @@ export class OebbApiService {
     private http : HttpClient,
     ) { }
 
+  auth(): Observable<LoginResponse>  {
+    if (this.isTokenExpired()) {
+      return this.init();
+    }
+    else {
+      return of(this.lastLoginResponse!)
+    }
+  }
   searchStation(query: string, opt?: StationSearchOptions) : Observable<Array<Station>> {
-
     if (query.length == 0) {
       throw new Error('missing or invalid `query` parameter')
     }
@@ -40,17 +48,17 @@ export class OebbApiService {
     )
   }
 
-  auth(): Observable<LoginResponse>  {
-    if (this.isTokenExpired()) {
-      return this.init();
-    }
-    else {
-      return of(this.lastLoginResponse!)
-    }
+  travelAction(request : TravelActionRequest) : Observable<Array<TravelAction>> {
+    return this.auth().pipe(
+      mergeMap(_ => this._travelAction(request))
+    )
   }
 
+
+  //region Private
+
   private init(): Observable<LoginResponse> {
-    const url = `${this.baseUrl}/api/auth`
+    let url = `${this.baseUrl}/api/auth`
     return this.http.get(url,
     {
       headers: new HttpHeaders({
@@ -60,7 +68,6 @@ export class OebbApiService {
     .pipe(
       map(x => new LoginResponse(x)),
       tap((response : LoginResponse) => {
-        console.log('authResponse:', response);
         this.lastLoginResponse = response;
         this.updateHeader();
       })
@@ -68,7 +75,7 @@ export class OebbApiService {
   }
 
   private _searchStation(name: string, opt: StationSearchOptions) : Observable<Array<Station>> {
-    const url = `${this.baseUrl}/api/station/search`
+    let url = `${this.baseUrl}/api/station/search`
     return this.http.get<Array<Station>>(url, {
       params: {
         name: name,
@@ -78,7 +85,20 @@ export class OebbApiService {
     })
     .pipe(
       map(x => x.map(s => new Station(s))),
-      tap(response => console.log('stationSearch:', response))
+      tap(response => console.log('stationSearch:', response)
+      )
+    )
+  }
+
+  private _travelAction(request : TravelActionRequest) : Observable<Array<TravelAction>> {
+    let url = `${this.baseUrl}/api/travelActions`
+    return this.http.post<TravelActionResponse>(url, request, {
+      headers: this.requestHeaders
+    })
+    .pipe(
+      map(x => {
+        return new TravelActionResponse(x).travelActions;
+      })
     )
   }
 

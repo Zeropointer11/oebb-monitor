@@ -5,11 +5,26 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Edge",
+      "name": "Launch via NPM",
       "request": "launch",
-      "type": "pwa-msedge",
-      "url": "http://localhost:4200",
-      "webRoot": "${workspaceFolder}"
+      "runtimeArgs": [
+        "run-script",
+        "debug"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Attach Node by Process ID",
+      "processId": "${command:PickProcess}",
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
     },
     {
       "type": "pwa-msedge",
