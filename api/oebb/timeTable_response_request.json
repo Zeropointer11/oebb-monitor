@@ -1,0 +1,2283 @@
+{
+    "timeTableRequest": {
+        "beforeCount": 0,
+        "travelActionId": "string",
+        "from": {
+            "displayName": "string",
+            "number": 0,
+            "latitude": 0,
+            "longitude": 0,
+            "meta": "string",
+            "name": "string"
+        },
+        "to": {
+            "displayName": "string",
+            "number": 0,
+            "latitude": 0,
+            "longitude": 0,
+            "meta": "string",
+            "name": "string"
+        },
+        "datetimeDeparture": "string",
+        "datetimeArrival": "string",
+        "changesMax": 0,
+        "count": 0,
+        "customerVias": [{
+            "displayName": "string",
+            "number": 0,
+            "latitude": 0,
+            "longitude": 0,
+            "meta": "string",
+            "name": "string",
+            "minStay": 0
+        }],
+        "debugFilter": {
+            "noAggregationFilter": true,
+            "noEqclassFilter": true,
+            "noNrtpathFilter": true,
+            "noPaymentFilter": true,
+            "useTripartFilter": true,
+            "noVbxFilter": true,
+            "noCategoriesFilter": true,
+            "distDatetime": "string"
+        },
+        "filter": {
+            "connections": [
+                "string"
+            ],
+            "regionaltrains": true,
+            "direct": true,
+            "changeTime": 0,
+            "wheelchair": true,
+            "bikes": true,
+            "trains": true,
+            "motorail": true,
+            "includedTrains": [
+                "string"
+            ]
+        },
+        "infoCardId": "string",
+        "passengers": [{
+            "_order_index": 0,
+            "age": 0,
+            "atFbgPassengerIndex": 0,
+            "atFbgType": 0,
+            "birthDate": "string",
+            "birthdateChangeable": true,
+            "birthdateDeletable": true,
+            "birthdateRequired": true,
+            "customAttributes": [{
+                "id": "string",
+                "type": "string",
+                "label": {
+                    "de": "string",
+                    "en": "string",
+                    "it": "string",
+                    "fr": "string"
+                },
+                "subtext": {
+                    "de": "string",
+                    "en": "string",
+                    "it": "string",
+                    "fr": "string"
+                },
+                "value": "string",
+                "maxLength": 0,
+                "dateFrom": "string",
+                "dateTo": "string",
+                "listValues": [{
+                    "label": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "priority": 0,
+                    "value": "string"
+                }],
+                "listOptions": {
+                    "listId": "string",
+                    "pageNumber": 0,
+                    "pageSize": 0
+                },
+                "fixedValue": "string",
+                "list_id": "string",
+                "show_attributes": "string"
+            }],
+            "cards": [{
+                "cardProductClass": "string",
+                "deletable": true,
+                "mainCard": true,
+                "expired": true,
+                "locked": true,
+                "isMergeableIntoCustomerAccount": true,
+                "isNativeTSCard": true,
+                "cardNavigation": "discountCard",
+                "kdbId": "string",
+                "cardNumber": "string",
+                "customerId": "string",
+                "person": {
+                    "birthDate": "string",
+                    "titlePrefix": "string",
+                    "titleSuffix": "string",
+                    "sex": "string",
+                    "firstName": "string",
+                    "lastName": "string"
+                },
+                "validFrom": "string",
+                "validTo": "string",
+                "isFromKkms": true,
+                "orderPartId": "string",
+                "availableForMobile": true,
+                "individualCooperationPartners": [
+                    "string"
+                ],
+                "product": {
+                    "piProductName": "string",
+                    "piCustomerType": "string",
+                    "kkmsFeatures": [
+                        "string"
+                    ]
+                },
+                "name": "string",
+                "cardId": 0,
+                "kkmsCardId": 0,
+                "numberRequired": true,
+                "isChallenged": true,
+                "isFamily": true,
+                "isSelectable": true,
+                "motorailTrainRelevance": "PERSON_ONLY",
+                "image": "string",
+                "isDiscountCard": true
+            }],
+            "challengedFlags": {
+                "hasHandicappedPass": true,
+                "hasAssistanceDog": true,
+                "hasWheelchair": true,
+                "hasAttendant": true
+            },
+            "colorId": "string",
+            "customerId": "string",
+            "fakeBirthDate": true,
+            "firstName": "string",
+            "groupSize": 0,
+            "id": 0,
+            "insuranceHolder": true,
+            "kdbId": 0,
+            "lastName": "string",
+            "me": true,
+            "nameChangeable": true,
+            "note1": "string",
+            "note2": "string",
+            "numberOfAttendants": 0,
+            "passengerDeletable": true,
+            "position": 0,
+            "relations": [{
+                "otherPassenger": 0,
+                "type": "HAS_CHILD"
+            }],
+            "remembered": true,
+            "sex": "string",
+            "type": "ADULT",
+            "technicalId": "string",
+            "carDetails": {
+                "makeName": "string",
+                "modelGroupName": "string",
+                "year": 0,
+                "modelName": "string",
+                "typeName": "string",
+                "typeCode": "string",
+                "typeAutomaticallySelected": true,
+                "textileRoof": {
+                    "code": "string",
+                    "isPresent": true
+                },
+                "roofRack": {
+                    "code": "string",
+                    "isPresent": true,
+                    "type": 0,
+                    "height": 0
+                },
+                "rearRack": {
+                    "code": "string",
+                    "isPresent": true,
+                    "hasHeightIncrease": true,
+                    "heightIncrease": 0,
+                    "numberOfBikes": 0
+                },
+                "features": {},
+                "licensePlateNumber": "string",
+                "epaCategory": 0,
+                "length": 0,
+                "width": 0,
+                "height": 0
+            },
+            "motorbikeDetails": {
+                "code": "string",
+                "epaVehicleType": "string",
+                "description": "string",
+                "licensePlateNumber": "string",
+                "epaCategory": 0,
+                "length": 0,
+                "width": 0,
+                "height": 0
+            },
+            "specialVehicleDetails": {
+                "code": "string",
+                "epaVehicleType": "string",
+                "makeName": "string",
+                "modelGroupName": "string",
+                "licensePlateNumber": "string",
+                "epaCategory": 0,
+                "length": 0,
+                "width": 0,
+                "height": 0
+            },
+            "trailerDetails": {
+                "trailerCategory": 0,
+                "coverType": "string",
+                "licensePlateNumber": "string",
+                "epaCategory": 0,
+                "length": 0,
+                "width": 0,
+                "height": 0
+            },
+            "personId": "string",
+            "isPersonalFavourite": true,
+            "addresses": [{
+                "type": "string",
+                "label": {
+                    "de": "string",
+                    "en": "string",
+                    "it": "string",
+                    "fr": "string"
+                },
+                "city": "string",
+                "street": "string",
+                "zipCode": "string",
+                "countryIsoCode": "string",
+                "countryText": "string"
+            }],
+            "addressesRequired": true
+        }],
+        "reverse": true,
+        "scrollId": "string",
+        "search": {},
+        "type": "string",
+        "sortType": "PRICE, DEPARTURE, ARRIVA",
+        "bestPriceId": "string",
+        "entrypointId": "string",
+        "shopEntryName": "string"
+    },
+    "timeTableResponse": {
+        "connections": [{
+            "duration": 0,
+            "from": {
+                "departure": "string",
+                "departurePlatform": "string",
+                "departureDelay": "string",
+                "arrival": "string",
+                "arrivalPlatform": "string",
+                "departurePlatformDeviation": "string",
+                "arrivalPlatformDeviation": "string",
+                "arrivalDelay": "string",
+                "name": "string",
+                "journeyPreviewName": "string",
+                "esn": 0,
+                "gps": [
+                    0
+                ],
+                "showAsResolvedMetaStation": true
+            },
+            "id": "string",
+            "sections": [{
+                "category": {
+                    "name": "string",
+                    "displayName": "string",
+                    "longName": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "place": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "number": "string",
+                    "direction": "string",
+                    "backgroundColor": "string",
+                    "backgroundColorDisabled": "string",
+                    "barColor": "string",
+                    "barColorDisabled": "string",
+                    "fontColor": "string",
+                    "fontColorDisabled": "string",
+                    "iconId": "string",
+                    "journeyPreviewIconColor": "string",
+                    "journeyPreviewIconId": "string",
+                    "assistantIconId": "string",
+                    "train": true,
+                    "parallelName": "string",
+                    "parallelNumber": "string",
+                    "parallelDisplayName": "string",
+                    "parallelLongName": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    }
+                },
+                "sectionIdx": 0,
+                "from": {
+                    "departure": "string",
+                    "departureDelay": "string",
+                    "departurePlatform": "string",
+                    "departurePlatformDeviation": "string",
+                    "journeyPreviewName": "string",
+                    "name": "string",
+                    "esn": 0
+                },
+                "to": {
+                    "arrival": "string",
+                    "arrivalDelay": "string",
+                    "arrivalPlatform": "string",
+                    "arrivalPlatformDeviation": "string",
+                    "name": "string",
+                    "esn": 0
+                },
+                "type": "string",
+                "attributes": [{
+                    "de": "string",
+                    "en": "string",
+                    "it": "string",
+                    "fr": "string"
+                }],
+                "passlist": [{
+                    "departure": "string",
+                    "departurePlatform": "string",
+                    "departureDelay": "string",
+                    "arrival": "string",
+                    "arrivalPlatform": "string",
+                    "departurePlatformDeviation": "string",
+                    "arrivalPlatformDeviation": "string",
+                    "arrivalDelay": "string",
+                    "name": "string",
+                    "journeyPreviewName": "string",
+                    "esn": 0,
+                    "gps": [
+                        0
+                    ],
+                    "showAsResolvedMetaStation": true
+                }],
+                "duration": 0,
+                "image": "string",
+                "distance": 0,
+                "durationSum": 0,
+                "switchDuration": 0,
+                "footpathDuration": 0,
+                "notValidOffers": [
+                    "string"
+                ],
+                "extras": [{
+                    "offers": [{
+                        "offerId": "string",
+                        "reducedScope": [{
+                            "from": {
+                                "name": "string",
+                                "sectionIdx": 0
+                            },
+                            "to": {
+                                "name": "string",
+                                "sectionIdx": 0
+                            }
+                        }],
+                        "required": true,
+                        "surcharge": 0,
+                        "price": {
+                            "total": 0,
+                            "tax": 0,
+                            "surcharge": 0,
+                            "saving": 0,
+                            "followUp": 0,
+                            "ignoreFirstFollowUp": true
+                        },
+                        "allSections": true,
+                        "reservationDetails": {
+                            "class1": [{
+                                "id": 0,
+                                "accCat": "string",
+                                "accClass": 0,
+                                "accType": "string",
+                                "ignoreFirstFollowUp": true,
+                                "isGlobalPriced": true,
+                                "isRequired": true,
+                                "isFixReservability": true,
+                                "isGAR": true,
+                                "objects": [{
+                                    "label": 0,
+                                    "price": 0,
+                                    "birthdate": "string",
+                                    "special": true,
+                                    "tc": 0,
+                                    "id": 0
+                                }],
+                                "rideConfs": [{
+                                    "accCat": "string",
+                                    "bookingCodes": [{}],
+                                    "capacity": 0,
+                                    "maxPerBooking": 0,
+                                    "bookingQuantity": 0,
+                                    "displayId": 0,
+                                    "followUpPrice": 0,
+                                    "id": 0,
+                                    "mergedId": 0,
+                                    "name": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "title": "string",
+                                    "objects": [{
+                                        "label": 0,
+                                        "price": 0,
+                                        "birthdate": "string",
+                                        "special": true,
+                                        "tc": 0,
+                                        "id": 0
+                                    }],
+                                    "preferences": [{
+                                        "display_id": 0,
+                                        "name": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "param": "string",
+                                        "success_digits": [
+                                            "string"
+                                        ]
+                                    }],
+                                    "price": 0,
+                                    "genderInputRequired": true,
+                                    "isFixReservability": true,
+                                    "availabilityState": "available"
+                                }],
+                                "scope": [
+                                    0
+                                ],
+                                "special": true,
+                                "rawObjects": [{}]
+                            }],
+                            "class2": [{
+                                "id": 0,
+                                "accCat": "string",
+                                "accClass": 0,
+                                "accType": "string",
+                                "ignoreFirstFollowUp": true,
+                                "isGlobalPriced": true,
+                                "isRequired": true,
+                                "isFixReservability": true,
+                                "isGAR": true,
+                                "objects": [{
+                                    "label": 0,
+                                    "price": 0,
+                                    "birthdate": "string",
+                                    "special": true,
+                                    "tc": 0,
+                                    "id": 0
+                                }],
+                                "rideConfs": [{
+                                    "accCat": "string",
+                                    "bookingCodes": [{}],
+                                    "capacity": 0,
+                                    "maxPerBooking": 0,
+                                    "bookingQuantity": 0,
+                                    "displayId": 0,
+                                    "followUpPrice": 0,
+                                    "id": 0,
+                                    "mergedId": 0,
+                                    "name": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "title": "string",
+                                    "objects": [{
+                                        "label": 0,
+                                        "price": 0,
+                                        "birthdate": "string",
+                                        "special": true,
+                                        "tc": 0,
+                                        "id": 0
+                                    }],
+                                    "preferences": [{
+                                        "display_id": 0,
+                                        "name": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "param": "string",
+                                        "success_digits": [
+                                            "string"
+                                        ]
+                                    }],
+                                    "price": 0,
+                                    "genderInputRequired": true,
+                                    "isFixReservability": true,
+                                    "availabilityState": "available"
+                                }],
+                                "scope": [
+                                    0
+                                ],
+                                "special": true,
+                                "rawObjects": [{}]
+                            }]
+                        },
+                        "additionalSurcharges": [{
+                            "extraId": "onlyOfferExtra",
+                            "surcharge": 0
+                        }],
+                        "excludedExtras": [
+                            "string"
+                        ],
+                        "requiredExtras": [
+                            "string"
+                        ],
+                        "notes": [{
+                            "type": "default",
+                            "text": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "style": "string"
+                        }],
+                        "currentlySelected": {
+                            "price": {
+                                "total": 0,
+                                "tax": 0,
+                                "surcharge": 0,
+                                "saving": 0,
+                                "followUp": 0,
+                                "ignoreFirstFollowUp": true
+                            },
+                            "notes": [{
+                                "type": "default",
+                                "text": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "style": "string"
+                            }],
+                            "reservationScopes": [{
+                                "accommodationCategory": {
+                                    "id": 0,
+                                    "preferences": [{
+                                        "id": "string",
+                                        "type": "bookingCode",
+                                        "rideconfId": 0
+                                    }],
+                                    "numberOfSelectedCompartments": 0
+                                },
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    },
+                                    "referencePlace": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    },
+                                    "seatDistribution": true,
+                                    "particularPlacesAdvanced": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                },
+                                "scope": [
+                                    0
+                                ],
+                                "selectedPlaces": [{
+                                    "coachNumber": "string",
+                                    "places": [
+                                        "string"
+                                    ],
+                                    "class": "1"
+                                }]
+                            }],
+                            "nighttrain": {
+                                "accommodationCategory": {
+                                    "id": 0,
+                                    "preferences": [{
+                                        "id": "string",
+                                        "type": "bookingCode",
+                                        "rideconfId": 0
+                                    }],
+                                    "numberOfSelectedCompartments": 0
+                                },
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    },
+                                    "referencePlace": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    },
+                                    "seatDistribution": true,
+                                    "particularPlacesAdvanced": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "excludedExtras": [
+                                "string"
+                            ],
+                            "requiredExtras": [
+                                "string"
+                            ],
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "coachNumber": 0,
+                                    "places": [{
+                                        "gender": "string",
+                                        "passengerId": 0,
+                                        "placeNumber": "string"
+                                    }]
+                                },
+                                "referencePlace": {
+                                    "coachNumber": "string",
+                                    "placeNumber": "string"
+                                },
+                                "seatDistribution": true,
+                                "particularPlacesAdvanced": {
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }
+                            }
+                        },
+                        "reservationScopes": [{
+                            "accommodationCategory": {
+                                "id": 0,
+                                "preferences": [{
+                                    "id": "string",
+                                    "type": "bookingCode",
+                                    "rideconfId": 0
+                                }],
+                                "numberOfSelectedCompartments": 0
+                            },
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "coachNumber": 0,
+                                    "places": [{
+                                        "gender": "string",
+                                        "passengerId": 0,
+                                        "placeNumber": "string"
+                                    }]
+                                },
+                                "referencePlace": {
+                                    "coachNumber": "string",
+                                    "placeNumber": "string"
+                                },
+                                "seatDistribution": true,
+                                "particularPlacesAdvanced": {
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }
+                            },
+                            "scope": [
+                                0
+                            ],
+                            "selectedPlaces": [{
+                                "coachNumber": "string",
+                                "places": [
+                                    "string"
+                                ],
+                                "class": "1"
+                            }]
+                        }],
+                        "defaultSelected": true,
+                        "availabilityState": "available",
+                        "additionalAvailabilityState": [{
+                            "extraId": "onlyOfferExtra",
+                            "availabilityState": "available"
+                        }],
+                        "accommodationCategoryGroups": [{
+                            "id": "default",
+                            "title": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "notes": [{
+                                "type": "default",
+                                "text": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "style": "string"
+                            }],
+                            "accommodationCategories": [{
+                                "id": 0,
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": 0,
+                                            "places": [{
+                                                "gender": "string",
+                                                "passengerId": 0,
+                                                "placeNumber": "string"
+                                            }]
+                                        }
+                                    },
+                                    "referencePlace": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": "string",
+                                            "placeNumber": "string"
+                                        }
+                                    },
+                                    "seatDistribution": {
+                                        "available": true,
+                                        "selection": true
+                                    },
+                                    "particularPlacesAdvanced": {
+                                        "available": true,
+                                        "selection": {
+                                            "selectedPlaces": [{
+                                                "coachNumber": "string",
+                                                "places": [
+                                                    "string"
+                                                ],
+                                                "class": "1"
+                                            }]
+                                        }
+                                    }
+                                },
+                                "image": "string",
+                                "selected": true,
+                                "title": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "notes": [{
+                                    "type": "default",
+                                    "text": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "style": "string"
+                                }],
+                                "preferences": [{
+                                    "type": "string",
+                                    "items": [{
+                                        "id": "string",
+                                        "selected": true,
+                                        "title": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "type": "bookingCode",
+                                        "disabled": true,
+                                        "rideconfId": 0,
+                                        "gender": "string"
+                                    }],
+                                    "title": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "required": true,
+                                    "passengerId": 0
+                                }],
+                                "preferencesRequiredForAllPassengers": true,
+                                "price": {
+                                    "total": 0,
+                                    "tax": 0,
+                                    "surcharge": 0,
+                                    "saving": 0,
+                                    "followUp": 0,
+                                    "ignoreFirstFollowUp": true
+                                },
+                                "disabled": true,
+                                "availabilityState": "available",
+                                "availableOffers": [{
+                                    "id": "string",
+                                    "price": {
+                                        "total": 0,
+                                        "tax": 0,
+                                        "surcharge": 0,
+                                        "saving": 0,
+                                        "followUp": 0,
+                                        "ignoreFirstFollowUp": true
+                                    },
+                                    "privateVariations": [{
+                                        "count": 0,
+                                        "surcharge": 0,
+                                        "selected": true
+                                    }]
+                                }],
+                                "availableSpots": {
+                                    "female": 0,
+                                    "male": 0
+                                }
+                            }],
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    }
+                                },
+                                "referencePlace": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    }
+                                },
+                                "seatDistribution": {
+                                    "available": true,
+                                    "selection": true
+                                },
+                                "particularPlacesAdvanced": {
+                                    "available": true,
+                                    "selection": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "particularPlacesRequiredPassengerIds": [
+                                0
+                            ],
+                            "numberOfSelectablePlaces": 0
+                        }],
+                        "fancyReservation": {
+                            "particularPlaces": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": 0,
+                                    "places": [{
+                                        "gender": "string",
+                                        "passengerId": 0,
+                                        "placeNumber": "string"
+                                    }]
+                                }
+                            },
+                            "referencePlace": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": "string",
+                                    "placeNumber": "string"
+                                }
+                            },
+                            "seatDistribution": {
+                                "available": true,
+                                "selection": true
+                            },
+                            "particularPlacesAdvanced": {
+                                "available": true,
+                                "selection": {
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }
+                            }
+                        },
+                        "particularPlacesRequiredPassengerIds": [
+                            0
+                        ]
+                    }],
+                    "offerIds": [
+                        "string"
+                    ],
+                    "available": true,
+                    "fancyReservation": {
+                        "particularPlaces": {
+                            "available": true,
+                            "selection": {
+                                "coachNumber": 0,
+                                "places": [{
+                                    "gender": "string",
+                                    "passengerId": 0,
+                                    "placeNumber": "string"
+                                }]
+                            }
+                        },
+                        "referencePlace": {
+                            "available": true,
+                            "selection": {
+                                "coachNumber": "string",
+                                "placeNumber": "string"
+                            }
+                        },
+                        "seatDistribution": {
+                            "available": true,
+                            "selection": true
+                        },
+                        "particularPlacesAdvanced": {
+                            "available": true,
+                            "selection": {
+                                "selectedPlaces": [{
+                                    "coachNumber": "string",
+                                    "places": [
+                                        "string"
+                                    ],
+                                    "class": "1"
+                                }]
+                            }
+                        }
+                    },
+                    "accommodationCategories": [{
+                        "id": 0,
+                        "fancyReservation": {
+                            "particularPlaces": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": 0,
+                                    "places": [{
+                                        "gender": "string",
+                                        "passengerId": 0,
+                                        "placeNumber": "string"
+                                    }]
+                                }
+                            },
+                            "referencePlace": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": "string",
+                                    "placeNumber": "string"
+                                }
+                            },
+                            "seatDistribution": {
+                                "available": true,
+                                "selection": true
+                            },
+                            "particularPlacesAdvanced": {
+                                "available": true,
+                                "selection": {
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }
+                            }
+                        },
+                        "image": "string",
+                        "selected": true,
+                        "title": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "notes": [{
+                            "type": "default",
+                            "text": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "style": "string"
+                        }],
+                        "preferences": [{
+                            "type": "string",
+                            "items": [{
+                                "id": "string",
+                                "selected": true,
+                                "title": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "type": "bookingCode",
+                                "disabled": true,
+                                "rideconfId": 0,
+                                "gender": "string"
+                            }],
+                            "title": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "required": true,
+                            "passengerId": 0
+                        }],
+                        "preferencesRequiredForAllPassengers": true,
+                        "price": {
+                            "total": 0,
+                            "tax": 0,
+                            "surcharge": 0,
+                            "saving": 0,
+                            "followUp": 0,
+                            "ignoreFirstFollowUp": true
+                        },
+                        "disabled": true,
+                        "availabilityState": "available",
+                        "availableOffers": [{
+                            "id": "string",
+                            "price": {
+                                "total": 0,
+                                "tax": 0,
+                                "surcharge": 0,
+                                "saving": 0,
+                                "followUp": 0,
+                                "ignoreFirstFollowUp": true
+                            },
+                            "privateVariations": [{
+                                "count": 0,
+                                "surcharge": 0,
+                                "selected": true
+                            }]
+                        }],
+                        "availableSpots": {
+                            "female": 0,
+                            "male": 0
+                        }
+                    }],
+                    "scope": [
+                        0
+                    ],
+                    "relevantReductions": [{
+                        "type": "string",
+                        "text": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        }
+                    }],
+                    "availabilityState": "available",
+                    "validities": [{
+                        "date": "string",
+                        "selected": true
+                    }],
+                    "validityTimerange": {
+                        "begin": "string",
+                        "end": "string",
+                        "selectedValidityDay": "string"
+                    },
+                    "id": "onlyOfferExtra",
+                    "type": "string",
+                    "title": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "germanProductTitlesRaw": [
+                        "string"
+                    ],
+                    "notes": [{
+                        "type": "default",
+                        "text": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "style": "string"
+                    }],
+                    "selected": true,
+                    "disabled": true,
+                    "price": {
+                        "total": 0,
+                        "tax": 0,
+                        "surcharge": 0,
+                        "saving": 0,
+                        "followUp": 0,
+                        "ignoreFirstFollowUp": true
+                    }
+                }],
+                "particularPlacesRequiredPassengerIds": [
+                    0
+                ],
+                "numberOfSelectablePlaces": 0,
+                "nighttrain": {
+                    "title": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "operatorCategory": "string",
+                    "accommodationGroups": [{
+                        "id": "string",
+                        "image": "string",
+                        "type": "string",
+                        "title": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "linkTitle": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "notes": [{
+                            "type": "default",
+                            "text": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "style": "string"
+                        }],
+                        "fancyReservation": {
+                            "particularPlaces": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": 0,
+                                    "places": [{
+                                        "gender": "string",
+                                        "passengerId": 0,
+                                        "placeNumber": "string"
+                                    }]
+                                }
+                            },
+                            "referencePlace": {
+                                "available": true,
+                                "selection": {
+                                    "coachNumber": "string",
+                                    "placeNumber": "string"
+                                }
+                            },
+                            "seatDistribution": {
+                                "available": true,
+                                "selection": true
+                            },
+                            "particularPlacesAdvanced": {
+                                "available": true,
+                                "selection": {
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }
+                            }
+                        },
+                        "selected": true,
+                        "offers": [{
+                            "offerId": "string",
+                            "reducedScope": [{
+                                "from": {
+                                    "name": "string",
+                                    "sectionIdx": 0
+                                },
+                                "to": {
+                                    "name": "string",
+                                    "sectionIdx": 0
+                                }
+                            }],
+                            "required": true,
+                            "surcharge": 0,
+                            "price": {
+                                "total": 0,
+                                "tax": 0,
+                                "surcharge": 0,
+                                "saving": 0,
+                                "followUp": 0,
+                                "ignoreFirstFollowUp": true
+                            },
+                            "allSections": true,
+                            "reservationDetails": {
+                                "class1": [{
+                                    "id": 0,
+                                    "accCat": "string",
+                                    "accClass": 0,
+                                    "accType": "string",
+                                    "ignoreFirstFollowUp": true,
+                                    "isGlobalPriced": true,
+                                    "isRequired": true,
+                                    "isFixReservability": true,
+                                    "isGAR": true,
+                                    "objects": [{
+                                        "label": 0,
+                                        "price": 0,
+                                        "birthdate": "string",
+                                        "special": true,
+                                        "tc": 0,
+                                        "id": 0
+                                    }],
+                                    "rideConfs": [{
+                                        "accCat": "string",
+                                        "bookingCodes": [{}],
+                                        "capacity": 0,
+                                        "maxPerBooking": 0,
+                                        "bookingQuantity": 0,
+                                        "displayId": 0,
+                                        "followUpPrice": 0,
+                                        "id": 0,
+                                        "mergedId": 0,
+                                        "name": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "title": "string",
+                                        "objects": [{
+                                            "label": 0,
+                                            "price": 0,
+                                            "birthdate": "string",
+                                            "special": true,
+                                            "tc": 0,
+                                            "id": 0
+                                        }],
+                                        "preferences": [{
+                                            "display_id": 0,
+                                            "name": {
+                                                "de": "string",
+                                                "en": "string",
+                                                "it": "string",
+                                                "fr": "string"
+                                            },
+                                            "param": "string",
+                                            "success_digits": [
+                                                "string"
+                                            ]
+                                        }],
+                                        "price": 0,
+                                        "genderInputRequired": true,
+                                        "isFixReservability": true,
+                                        "availabilityState": "available"
+                                    }],
+                                    "scope": [
+                                        0
+                                    ],
+                                    "special": true,
+                                    "rawObjects": [{}]
+                                }],
+                                "class2": [{
+                                    "id": 0,
+                                    "accCat": "string",
+                                    "accClass": 0,
+                                    "accType": "string",
+                                    "ignoreFirstFollowUp": true,
+                                    "isGlobalPriced": true,
+                                    "isRequired": true,
+                                    "isFixReservability": true,
+                                    "isGAR": true,
+                                    "objects": [{
+                                        "label": 0,
+                                        "price": 0,
+                                        "birthdate": "string",
+                                        "special": true,
+                                        "tc": 0,
+                                        "id": 0
+                                    }],
+                                    "rideConfs": [{
+                                        "accCat": "string",
+                                        "bookingCodes": [{}],
+                                        "capacity": 0,
+                                        "maxPerBooking": 0,
+                                        "bookingQuantity": 0,
+                                        "displayId": 0,
+                                        "followUpPrice": 0,
+                                        "id": 0,
+                                        "mergedId": 0,
+                                        "name": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "title": "string",
+                                        "objects": [{
+                                            "label": 0,
+                                            "price": 0,
+                                            "birthdate": "string",
+                                            "special": true,
+                                            "tc": 0,
+                                            "id": 0
+                                        }],
+                                        "preferences": [{
+                                            "display_id": 0,
+                                            "name": {
+                                                "de": "string",
+                                                "en": "string",
+                                                "it": "string",
+                                                "fr": "string"
+                                            },
+                                            "param": "string",
+                                            "success_digits": [
+                                                "string"
+                                            ]
+                                        }],
+                                        "price": 0,
+                                        "genderInputRequired": true,
+                                        "isFixReservability": true,
+                                        "availabilityState": "available"
+                                    }],
+                                    "scope": [
+                                        0
+                                    ],
+                                    "special": true,
+                                    "rawObjects": [{}]
+                                }]
+                            },
+                            "additionalSurcharges": [{
+                                "extraId": "onlyOfferExtra",
+                                "surcharge": 0
+                            }],
+                            "excludedExtras": [
+                                "string"
+                            ],
+                            "requiredExtras": [
+                                "string"
+                            ],
+                            "notes": [{
+                                "type": "default",
+                                "text": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "style": "string"
+                            }],
+                            "currentlySelected": {
+                                "price": {
+                                    "total": 0,
+                                    "tax": 0,
+                                    "surcharge": 0,
+                                    "saving": 0,
+                                    "followUp": 0,
+                                    "ignoreFirstFollowUp": true
+                                },
+                                "notes": [{
+                                    "type": "default",
+                                    "text": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "style": "string"
+                                }],
+                                "reservationScopes": [{
+                                    "accommodationCategory": {
+                                        "id": 0,
+                                        "preferences": [{
+                                            "id": "string",
+                                            "type": "bookingCode",
+                                            "rideconfId": 0
+                                        }],
+                                        "numberOfSelectedCompartments": 0
+                                    },
+                                    "fancyReservation": {
+                                        "particularPlaces": {
+                                            "coachNumber": 0,
+                                            "places": [{
+                                                "gender": "string",
+                                                "passengerId": 0,
+                                                "placeNumber": "string"
+                                            }]
+                                        },
+                                        "referencePlace": {
+                                            "coachNumber": "string",
+                                            "placeNumber": "string"
+                                        },
+                                        "seatDistribution": true,
+                                        "particularPlacesAdvanced": {
+                                            "selectedPlaces": [{
+                                                "coachNumber": "string",
+                                                "places": [
+                                                    "string"
+                                                ],
+                                                "class": "1"
+                                            }]
+                                        }
+                                    },
+                                    "scope": [
+                                        0
+                                    ],
+                                    "selectedPlaces": [{
+                                        "coachNumber": "string",
+                                        "places": [
+                                            "string"
+                                        ],
+                                        "class": "1"
+                                    }]
+                                }],
+                                "nighttrain": {
+                                    "accommodationCategory": {
+                                        "id": 0,
+                                        "preferences": [{
+                                            "id": "string",
+                                            "type": "bookingCode",
+                                            "rideconfId": 0
+                                        }],
+                                        "numberOfSelectedCompartments": 0
+                                    },
+                                    "fancyReservation": {
+                                        "particularPlaces": {
+                                            "coachNumber": 0,
+                                            "places": [{
+                                                "gender": "string",
+                                                "passengerId": 0,
+                                                "placeNumber": "string"
+                                            }]
+                                        },
+                                        "referencePlace": {
+                                            "coachNumber": "string",
+                                            "placeNumber": "string"
+                                        },
+                                        "seatDistribution": true,
+                                        "particularPlacesAdvanced": {
+                                            "selectedPlaces": [{
+                                                "coachNumber": "string",
+                                                "places": [
+                                                    "string"
+                                                ],
+                                                "class": "1"
+                                            }]
+                                        }
+                                    }
+                                },
+                                "excludedExtras": [
+                                    "string"
+                                ],
+                                "requiredExtras": [
+                                    "string"
+                                ],
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    },
+                                    "referencePlace": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    },
+                                    "seatDistribution": true,
+                                    "particularPlacesAdvanced": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "reservationScopes": [{
+                                "accommodationCategory": {
+                                    "id": 0,
+                                    "preferences": [{
+                                        "id": "string",
+                                        "type": "bookingCode",
+                                        "rideconfId": 0
+                                    }],
+                                    "numberOfSelectedCompartments": 0
+                                },
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    },
+                                    "referencePlace": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    },
+                                    "seatDistribution": true,
+                                    "particularPlacesAdvanced": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                },
+                                "scope": [
+                                    0
+                                ],
+                                "selectedPlaces": [{
+                                    "coachNumber": "string",
+                                    "places": [
+                                        "string"
+                                    ],
+                                    "class": "1"
+                                }]
+                            }],
+                            "defaultSelected": true,
+                            "availabilityState": "available",
+                            "additionalAvailabilityState": [{
+                                "extraId": "onlyOfferExtra",
+                                "availabilityState": "available"
+                            }],
+                            "accommodationCategoryGroups": [{
+                                "id": "default",
+                                "title": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "notes": [{
+                                    "type": "default",
+                                    "text": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "style": "string"
+                                }],
+                                "accommodationCategories": [{
+                                    "id": 0,
+                                    "fancyReservation": {
+                                        "particularPlaces": {
+                                            "available": true,
+                                            "selection": {
+                                                "coachNumber": 0,
+                                                "places": [{
+                                                    "gender": "string",
+                                                    "passengerId": 0,
+                                                    "placeNumber": "string"
+                                                }]
+                                            }
+                                        },
+                                        "referencePlace": {
+                                            "available": true,
+                                            "selection": {
+                                                "coachNumber": "string",
+                                                "placeNumber": "string"
+                                            }
+                                        },
+                                        "seatDistribution": {
+                                            "available": true,
+                                            "selection": true
+                                        },
+                                        "particularPlacesAdvanced": {
+                                            "available": true,
+                                            "selection": {
+                                                "selectedPlaces": [{
+                                                    "coachNumber": "string",
+                                                    "places": [
+                                                        "string"
+                                                    ],
+                                                    "class": "1"
+                                                }]
+                                            }
+                                        }
+                                    },
+                                    "image": "string",
+                                    "selected": true,
+                                    "title": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "notes": [{
+                                        "type": "default",
+                                        "text": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "style": "string"
+                                    }],
+                                    "preferences": [{
+                                        "type": "string",
+                                        "items": [{
+                                            "id": "string",
+                                            "selected": true,
+                                            "title": {
+                                                "de": "string",
+                                                "en": "string",
+                                                "it": "string",
+                                                "fr": "string"
+                                            },
+                                            "type": "bookingCode",
+                                            "disabled": true,
+                                            "rideconfId": 0,
+                                            "gender": "string"
+                                        }],
+                                        "title": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "required": true,
+                                        "passengerId": 0
+                                    }],
+                                    "preferencesRequiredForAllPassengers": true,
+                                    "price": {
+                                        "total": 0,
+                                        "tax": 0,
+                                        "surcharge": 0,
+                                        "saving": 0,
+                                        "followUp": 0,
+                                        "ignoreFirstFollowUp": true
+                                    },
+                                    "disabled": true,
+                                    "availabilityState": "available",
+                                    "availableOffers": [{
+                                        "id": "string",
+                                        "price": {
+                                            "total": 0,
+                                            "tax": 0,
+                                            "surcharge": 0,
+                                            "saving": 0,
+                                            "followUp": 0,
+                                            "ignoreFirstFollowUp": true
+                                        },
+                                        "privateVariations": [{
+                                            "count": 0,
+                                            "surcharge": 0,
+                                            "selected": true
+                                        }]
+                                    }],
+                                    "availableSpots": {
+                                        "female": 0,
+                                        "male": 0
+                                    }
+                                }],
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": 0,
+                                            "places": [{
+                                                "gender": "string",
+                                                "passengerId": 0,
+                                                "placeNumber": "string"
+                                            }]
+                                        }
+                                    },
+                                    "referencePlace": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": "string",
+                                            "placeNumber": "string"
+                                        }
+                                    },
+                                    "seatDistribution": {
+                                        "available": true,
+                                        "selection": true
+                                    },
+                                    "particularPlacesAdvanced": {
+                                        "available": true,
+                                        "selection": {
+                                            "selectedPlaces": [{
+                                                "coachNumber": "string",
+                                                "places": [
+                                                    "string"
+                                                ],
+                                                "class": "1"
+                                            }]
+                                        }
+                                    }
+                                },
+                                "particularPlacesRequiredPassengerIds": [
+                                    0
+                                ],
+                                "numberOfSelectablePlaces": 0
+                            }],
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    }
+                                },
+                                "referencePlace": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    }
+                                },
+                                "seatDistribution": {
+                                    "available": true,
+                                    "selection": true
+                                },
+                                "particularPlacesAdvanced": {
+                                    "available": true,
+                                    "selection": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "particularPlacesRequiredPassengerIds": [
+                                0
+                            ]
+                        }],
+                        "accommodationCategories": [{
+                            "id": 0,
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    }
+                                },
+                                "referencePlace": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    }
+                                },
+                                "seatDistribution": {
+                                    "available": true,
+                                    "selection": true
+                                },
+                                "particularPlacesAdvanced": {
+                                    "available": true,
+                                    "selection": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "image": "string",
+                            "selected": true,
+                            "title": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "notes": [{
+                                "type": "default",
+                                "text": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "style": "string"
+                            }],
+                            "preferences": [{
+                                "type": "string",
+                                "items": [{
+                                    "id": "string",
+                                    "selected": true,
+                                    "title": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "type": "bookingCode",
+                                    "disabled": true,
+                                    "rideconfId": 0,
+                                    "gender": "string"
+                                }],
+                                "title": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "required": true,
+                                "passengerId": 0
+                            }],
+                            "preferencesRequiredForAllPassengers": true,
+                            "price": {
+                                "total": 0,
+                                "tax": 0,
+                                "surcharge": 0,
+                                "saving": 0,
+                                "followUp": 0,
+                                "ignoreFirstFollowUp": true
+                            },
+                            "disabled": true,
+                            "availabilityState": "available",
+                            "availableOffers": [{
+                                "id": "string",
+                                "price": {
+                                    "total": 0,
+                                    "tax": 0,
+                                    "surcharge": 0,
+                                    "saving": 0,
+                                    "followUp": 0,
+                                    "ignoreFirstFollowUp": true
+                                },
+                                "privateVariations": [{
+                                    "count": 0,
+                                    "surcharge": 0,
+                                    "selected": true
+                                }]
+                            }],
+                            "availableSpots": {
+                                "female": 0,
+                                "male": 0
+                            }
+                        }],
+                        "availableOfferIds": [
+                            "string"
+                        ],
+                        "hasMissingRequiredPreferences": true,
+                        "detailsLink": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "availabilityState": "available",
+                        "accommodationCategoryGroups": [{
+                            "id": "default",
+                            "title": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "notes": [{
+                                "type": "default",
+                                "text": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "style": "string"
+                            }],
+                            "accommodationCategories": [{
+                                "id": 0,
+                                "fancyReservation": {
+                                    "particularPlaces": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": 0,
+                                            "places": [{
+                                                "gender": "string",
+                                                "passengerId": 0,
+                                                "placeNumber": "string"
+                                            }]
+                                        }
+                                    },
+                                    "referencePlace": {
+                                        "available": true,
+                                        "selection": {
+                                            "coachNumber": "string",
+                                            "placeNumber": "string"
+                                        }
+                                    },
+                                    "seatDistribution": {
+                                        "available": true,
+                                        "selection": true
+                                    },
+                                    "particularPlacesAdvanced": {
+                                        "available": true,
+                                        "selection": {
+                                            "selectedPlaces": [{
+                                                "coachNumber": "string",
+                                                "places": [
+                                                    "string"
+                                                ],
+                                                "class": "1"
+                                            }]
+                                        }
+                                    }
+                                },
+                                "image": "string",
+                                "selected": true,
+                                "title": {
+                                    "de": "string",
+                                    "en": "string",
+                                    "it": "string",
+                                    "fr": "string"
+                                },
+                                "notes": [{
+                                    "type": "default",
+                                    "text": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "style": "string"
+                                }],
+                                "preferences": [{
+                                    "type": "string",
+                                    "items": [{
+                                        "id": "string",
+                                        "selected": true,
+                                        "title": {
+                                            "de": "string",
+                                            "en": "string",
+                                            "it": "string",
+                                            "fr": "string"
+                                        },
+                                        "type": "bookingCode",
+                                        "disabled": true,
+                                        "rideconfId": 0,
+                                        "gender": "string"
+                                    }],
+                                    "title": {
+                                        "de": "string",
+                                        "en": "string",
+                                        "it": "string",
+                                        "fr": "string"
+                                    },
+                                    "required": true,
+                                    "passengerId": 0
+                                }],
+                                "preferencesRequiredForAllPassengers": true,
+                                "price": {
+                                    "total": 0,
+                                    "tax": 0,
+                                    "surcharge": 0,
+                                    "saving": 0,
+                                    "followUp": 0,
+                                    "ignoreFirstFollowUp": true
+                                },
+                                "disabled": true,
+                                "availabilityState": "available",
+                                "availableOffers": [{
+                                    "id": "string",
+                                    "price": {
+                                        "total": 0,
+                                        "tax": 0,
+                                        "surcharge": 0,
+                                        "saving": 0,
+                                        "followUp": 0,
+                                        "ignoreFirstFollowUp": true
+                                    },
+                                    "privateVariations": [{
+                                        "count": 0,
+                                        "surcharge": 0,
+                                        "selected": true
+                                    }]
+                                }],
+                                "availableSpots": {
+                                    "female": 0,
+                                    "male": 0
+                                }
+                            }],
+                            "fancyReservation": {
+                                "particularPlaces": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": 0,
+                                        "places": [{
+                                            "gender": "string",
+                                            "passengerId": 0,
+                                            "placeNumber": "string"
+                                        }]
+                                    }
+                                },
+                                "referencePlace": {
+                                    "available": true,
+                                    "selection": {
+                                        "coachNumber": "string",
+                                        "placeNumber": "string"
+                                    }
+                                },
+                                "seatDistribution": {
+                                    "available": true,
+                                    "selection": true
+                                },
+                                "particularPlacesAdvanced": {
+                                    "available": true,
+                                    "selection": {
+                                        "selectedPlaces": [{
+                                            "coachNumber": "string",
+                                            "places": [
+                                                "string"
+                                            ],
+                                            "class": "1"
+                                        }]
+                                    }
+                                }
+                            },
+                            "particularPlacesRequiredPassengerIds": [
+                                0
+                            ],
+                            "numberOfSelectablePlaces": 0
+                        }]
+                    }],
+                    "detailsLink": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "image": "string",
+                    "required": true,
+                    "selectionInfo": {
+                        "title": {
+                            "de": "string",
+                            "en": "string",
+                            "it": "string",
+                            "fr": "string"
+                        },
+                        "notes": [{
+                            "type": "default",
+                            "text": {
+                                "de": "string",
+                                "en": "string",
+                                "it": "string",
+                                "fr": "string"
+                            },
+                            "style": "string"
+                        }],
+                        "price": {
+                            "surcharge": 0
+                        },
+                        "selected": true,
+                        "disabled": true,
+                        "showChangeOfferButton": true
+                    },
+                    "from": {
+                        "name": "string"
+                    },
+                    "to": {
+                        "name": "string"
+                    },
+                    "sectionIdx": 0
+                },
+                "hasRealtime": true,
+                "reservations": [{
+                    "wagon": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "seats": [{
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    }],
+                    "_unsortedSeatLines": {},
+                    "_count": 0,
+                    "_motorbikeLine": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "_vcount": 0,
+                    "_vehicleLine": {
+                        "de": "string",
+                        "en": "string",
+                        "it": "string",
+                        "fr": "string"
+                    },
+                    "_class": 0,
+                    "_check": "string",
+                    "_num": "string",
+                    "_showComfortClass": true
+                }],
+                "hasOffer": true,
+                "shift": 0,
+                "lastPaged": true,
+                "hasOnlySecondClass": true,
+                "graphicalReservation": {
+                    "available": true,
+                    "ride": {
+                        "category": "string",
+                        "number": "string",
+                        "from": 0,
+                        "to": 0,
+                        "departure": "string",
+                        "origin": 0,
+                        "destination": 0,
+                        "originDeparture": "string"
+                    },
+                    "numberOfSelectablePlaces": 0,
+                    "componentUrl": "string"
+                },
+                "infos": [{
+                    "category": "alternative",
+                    "validFrom": "string",
+                    "validTo": "string",
+                    "header": "string",
+                    "text": "string",
+                    "textPlain": "string",
+                    "internalLink": "string",
+                    "externalLink": "string",
+                    "type": "normal",
+                    "sectionIdx": 0,
+                    "emergency": true
+                }]
+            }],
+            "switches": 0,
+            "to": {
+                "departure": "string",
+                "departurePlatform": "string",
+                "departureDelay": "string",
+                "arrival": "string",
+                "arrivalPlatform": "string",
+                "departurePlatformDeviation": "string",
+                "arrivalPlatformDeviation": "string",
+                "arrivalDelay": "string",
+                "name": "string",
+                "journeyPreviewName": "string",
+                "esn": 0,
+                "gps": [
+                    0
+                ],
+                "showAsResolvedMetaStation": true
+            },
+            "isValid": true,
+            "pastConnection": true,
+            "infos": [{
+                "category": "alternative",
+                "validFrom": "string",
+                "validTo": "string",
+                "header": "string",
+                "text": "string",
+                "textPlain": "string",
+                "internalLink": "string",
+                "externalLink": "string",
+                "type": "normal",
+                "sectionIdx": 0,
+                "emergency": true
+            }],
+            "customerVias": [{
+                "displayName": "string",
+                "number": 0,
+                "latitude": 0,
+                "longitude": 0,
+                "meta": "string",
+                "name": "string",
+                "minStay": 0
+            }]
+        }],
+        "hafasDebug": {
+            "fmtVersion": 0,
+            "trace": "string",
+            "kernelVersion": "string",
+            "lang": "string",
+            "id": "string",
+            "timings": [
+                0
+            ],
+            "version": "string",
+            "requestId": "string"
+        },
+        "infos": [{
+            "category": "alternative",
+            "validFrom": "string",
+            "validTo": "string",
+            "header": "string",
+            "text": "string",
+            "textPlain": "string",
+            "internalLink": "string",
+            "externalLink": "string",
+            "type": "normal",
+            "sectionIdx": 0,
+            "emergency": true
+        }]
+    }
+}
