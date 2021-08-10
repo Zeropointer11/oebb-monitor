@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -6,13 +6,10 @@ import { environment } from 'src/environments/environment';
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.less']
 })
-export class NavMenuComponent implements OnInit {
+export class NavMenuComponent {
 
   title = environment.title;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

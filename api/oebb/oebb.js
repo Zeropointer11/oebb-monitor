@@ -56,7 +56,6 @@ const getAutHeadersFrom = (req) => {
 }
 
 router.get("/station/search", function (req, res) {
-
   let headers = getAutHeadersFrom(req);
   callGet('https://tickets.oebb.at/api/hafas/v1/stations', req.query, headers, res)
 })

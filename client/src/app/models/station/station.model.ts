@@ -1,19 +1,24 @@
-import {
-  Gps
-} from "./gps.model";
+export interface StationInterface {
+  number: string;
+  name: string;
+  meta: string | null;
+  longitude : number;
+  latitude : number;
+}
 
-export class Station {
+export class Station implements StationInterface {
+  number: string;
+  name: string;
+  meta: string | null;
+  longitude: number;
+  latitude: number;
 
-  public number: string;
-  public name: string;
-  public meta: string | null;
-  public location: Gps | null;
-
-  constructor(stationResponse: any) {
+  constructor(stationResponse: StationInterface) {
     this.number = stationResponse.number;
     this.name = stationResponse.name;
     this.meta = stationResponse.meta ?? null;
-    this.location = new Gps(stationResponse.longitude, stationResponse.latitude)
+    this.latitude = stationResponse.latitude;
+    this.longitude = stationResponse.longitude;
   }
 
   displayName(): string {

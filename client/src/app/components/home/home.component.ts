@@ -1,8 +1,8 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { mergeMap } from 'rxjs/operators';
-import { SearchStation, StationSearchOptions, TravelActionRequest, TravelActionRequestFilter } from 'src/app/models/request.model';
-import { Station } from 'src/app/models/station.model';
-import { TravelAction } from 'src/app/models/travelaction.model';
+import { Station } from 'src/app/models/station/station.model';
+import { SearchStation, TravelActionRequest } from 'src/app/models/travelaction/request.travelaction.model';
+import { TravelAction } from 'src/app/models/travelaction/travelaction.model';
 import { OebbApiService } from 'src/app/service/oebb-api.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { OebbApiService } from 'src/app/service/oebb-api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   stations : Station[]= new Array<Station>();
 
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private readonly service : OebbApiService
   ) {
-    service.searchStation("Wien", new StationSearchOptions(5))
+    service.searchStation("Wien")
     .subscribe({
       next: value => {
         this.stations = value;
@@ -35,11 +35,6 @@ export class HomeComponent implements OnInit {
         this.travelActions = value;
       }
     })
-  }
-
-  ngOnInit(): void {
-
-
   }
 
 }

@@ -1,17 +1,15 @@
-import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { StationSearchOptions, TravelActionRequest } from '../models/request.model';
 
 import { Observable, of } from 'rxjs';
-import { catchError, last, map, mergeMap, tap } from 'rxjs/operators';
+import { map, mergeMap, tap } from 'rxjs/operators';
 
-import { LoginResponse } from '../models/login.model';
+import { AuthResponse, AuthResponseInterface, AuthToken } from '../models/general/session.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Station } from '../models/station.model';
+import { Station, StationInterface } from '../models/station/station.model';
 import { environment } from 'src/environments/environment';
-import { TravelAction, TravelActionResponse } from '../models/travelaction.model';
-
+import { TravelAction, TravelActionResponse } from '../models/travelaction/travelaction.model';
+import { TravelActionRequest } from '../models/travelaction/request.travelaction.model';
 
 
 @Injectable({
@@ -19,7 +17,7 @@ import { TravelAction, TravelActionResponse } from '../models/travelaction.model
 })
 export class OebbApiService {
   private baseUrl = environment.baseURL;
-  private lastLoginResponse? : LoginResponse;
+  private lastLoginResponse? : AuthResponse;
 
   private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -30,7 +28,7 @@ export class OebbApiService {
     private http : HttpClient,
     ) { }
 
-  auth(): Observable<LoginResponse>  {
+  auth(): Observable<AuthResponse>  {
     if (this.isTokenExpired()) {
       return this.init();
     }
@@ -38,13 +36,12 @@ export class OebbApiService {
       return of(this.lastLoginResponse!)
     }
   }
-  searchStation(query: string, opt?: StationSearchOptions) : Observable<Array<Station>> {
+  searchStation(query: string) : Observable<Array<Station>> {
     if (query.length == 0) {
       throw new Error('missing or invalid `query` parameter')
     }
-    const options = opt !== undefined ? opt: new StationSearchOptions(1)
     return this.auth().pipe(
-      mergeMap(_ => this._searchStation(query, options))
+      mergeMap(_ => this._searchStation(query))
     )
   }
 
@@ -54,32 +51,30 @@ export class OebbApiService {
     )
   }
 
-
   //region Private
 
-  private init(): Observable<LoginResponse> {
+  private init(): Observable<AuthResponse> {
     let url = `${this.baseUrl}/api/auth`
-    return this.http.get(url,
+    return this.http.get<AuthResponseInterface>(url,
     {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     })
     .pipe(
-      map(x => new LoginResponse(x)),
-      tap((response : LoginResponse) => {
+      map(x => new AuthResponse(x)),
+      tap((response : AuthResponse) => {
         this.lastLoginResponse = response;
         this.updateHeader();
       })
     )
   }
 
-  private _searchStation(name: string, opt: StationSearchOptions) : Observable<Array<Station>> {
+  private _searchStation(name: string) : Observable<Array<Station>> {
     let url = `${this.baseUrl}/api/station/search`
-    return this.http.get<Array<Station>>(url, {
+    return this.http.get<Array<StationInterface>>(url, {
       params: {
-        name: name,
-        results: opt.results
+        name: name
       },
       headers: this.requestHeaders
     })
@@ -96,9 +91,7 @@ export class OebbApiService {
       headers: this.requestHeaders
     })
     .pipe(
-      map(x => {
-        return new TravelActionResponse(x).travelActions;
-      })
+      map(x =>  new TravelActionResponse(x).travelActions)
     )
   }
 
