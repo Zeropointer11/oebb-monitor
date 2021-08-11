@@ -2,16 +2,16 @@ export interface StationInterface {
   number: string;
   name: string;
   meta: string | null;
-  longitude : number;
-  latitude : number;
+  longitude : number | null;
+  latitude : number | null;
 }
 
 export class Station implements StationInterface {
   number: string;
   name: string;
   meta: string | null;
-  longitude: number;
-  latitude: number;
+  longitude: number | null;
+  latitude: number | null;
 
   constructor(stationResponse: StationInterface) {
     this.number = stationResponse.number;

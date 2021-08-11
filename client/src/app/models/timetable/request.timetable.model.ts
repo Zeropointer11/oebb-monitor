@@ -5,14 +5,18 @@ export class TimeTableRequest {
   constructor(
   public travelActionId:    string,
   public datetimeDeparture: Date,
-  public filter:            Filter,
-  public passengers:        Passenger[],
-  public entryPointId:      string,
+  public datetimeArrival:   Date | null,
+  public from:              Station | null,
+  public to:                Station | null,
+  public entryPointId:      string | null,
+  public shopEntryName:     string | null,
+  public maxChanges:        number | null,
   public count:             number,
-  public debugFilter:       DebugFilter,
+  public filter:            TimeTableFilter,
+  public passengers:        Passenger[],
+  public reverse:           boolean | null,
+  public debugFilter:       TimeTableDebugFilter,
   public sortType:          TimeTableSortType,
-  public from:              Station,
-  public to:                Station,
   public customVias:        Station[],
   ){}
 
@@ -21,7 +25,7 @@ export class TimeTableRequest {
     return this;
   }
 
-  setFilter(filter : Filter): TimeTableRequest {
+  setFilter(filter : TimeTableFilter): TimeTableRequest {
     this.filter = filter;
     return this;
   }
@@ -34,14 +38,18 @@ export class TimeTableRequest {
     return new TimeTableRequest(
       travelActionId,
       new Date(),
-      new Filter(),
-      [Passenger.getDefaultPassenger()],
-      '',
-      5,
-      new DebugFilter(),
-      TimeTableSortType.DEPARTURE,
+      null,
       from,
       to,
+      '',
+      '',
+      null,
+      5,
+      new TimeTableFilter(),
+      [Passenger.getDefaultPassenger()],
+      null,
+      new TimeTableDebugFilter(),
+      TimeTableSortType.DEPARTURE,
       customVias
     )
   }
@@ -53,7 +61,7 @@ export enum TimeTableSortType {
   ARRIVAL = "ARRIVA",
 }
 
-export class DebugFilter {
+export class TimeTableDebugFilter {
   constructor(
   public noAggregationFilter: boolean = false,
   public noEqclassFilter:     boolean = false,
@@ -65,7 +73,7 @@ export class DebugFilter {
   ){}
 }
 
-export class Filter {
+export class TimeTableFilter {
   constructor(
   public regionaltrains: boolean = false,
   public direct:         boolean = false,

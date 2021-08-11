@@ -1,36 +1,41 @@
 
 export interface ConnectionStationInterface {
+  id:                         string | null;
+  name:                       string | null;
+
   departure:                  Date | null;
-  departurePlatform:          string | null;
-  departureDelay:             Date | null;
   arrival:                    Date | null;
+
+  departureDelay:             Date | null;
+  arrivalDelay:               Date | null;
+
+  departurePlatform:          string | null;
   arrivalPlatform:            string | null;
+
   departurePlatformDeviation: string | null;
   arrivalPlatformDeviation:   string | null;
-  arrivalDelay:               Date | null;
-  name:                       string;
-  journeyPreviewName:         string;
+
   esn:                        number;
-  gps:                        number[];
   showAsResolvedMetaStation:  boolean;
 }
 
 export class ConnectionStation implements ConnectionStationInterface {
+  id: string | null;
+  name: string | null;
   departure: Date | null = null;
-  departurePlatform: string | null = null;
-  departureDelay: Date | null = null;
   arrival: Date | null = null;
-  arrivalPlatform: string | null = null;
-  departurePlatformDeviation: string | null = null;
-  arrivalPlatformDeviation: string | null = null;
+  departureDelay: Date | null = null;
   arrivalDelay: Date | null = null;
-  name: string;
-  journeyPreviewName: string;
+  departurePlatform: string | null;
+  arrivalPlatform: string | null;
+  departurePlatformDeviation: string | null;
+  arrivalPlatformDeviation: string | null;
   esn: number;
-  gps: number[];
   showAsResolvedMetaStation: boolean;
 
   constructor(data : ConnectionStationInterface) {
+    this.id = data.id;
+
     if (data.departure !== null){
       this.departure = new Date(data.departure);
     }
@@ -48,11 +53,17 @@ export class ConnectionStation implements ConnectionStationInterface {
     this.departurePlatformDeviation = data.departurePlatformDeviation;
     this.arrivalPlatformDeviation = data.arrivalPlatformDeviation;
     this.name = data.name;
-    this.journeyPreviewName = data.journeyPreviewName;
-    this.esn = data.esn;
-    this.gps = data.gps;
+    this.esn = data.esn ?? -1;
     this.showAsResolvedMetaStation = data.showAsResolvedMetaStation ?? false;
 
+  }
+
+  realTimeDeparture(): Date | null {
+    return this.departureDelay ?? this.departure;
+  }
+
+  realTimeArrival(): Date | null {
+    return this.arrivalDelay ?? this.arrival;
   }
 
 }
