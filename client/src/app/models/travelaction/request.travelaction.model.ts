@@ -1,9 +1,14 @@
+import { Station } from "../station/station.model";
+
 export class TravelActionRequest {
-  public datetime : Date = new Date();
-  public filter : TravelActionRequestFilter = new TravelActionRequestFilter();
+  public filter: TravelActionRequestFilter = new TravelActionRequestFilter();
+  public shopEntryName: string | null = null;
+  public entryPointId: string | null = null;
+  public datetime: Date | null = null;
+
   constructor(
-    public from : SearchStation,
-    public to : SearchStation
+    public from : Station,
+    public to : Station
   ){}
 
   setDateTime(dateTime : Date) : TravelActionRequest {
@@ -24,12 +29,5 @@ export class TravelActionRequestFilter {
     public history : boolean = false,
     public maxEntries: number = 5,
     public productTypes : string[] =  []
-  ){}
-}
-
-export class SearchStation {
-  constructor(
-    public name: string,
-    public number: number
   ){}
 }
