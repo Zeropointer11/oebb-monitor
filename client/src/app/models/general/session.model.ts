@@ -1,4 +1,4 @@
-export interface AuthResponseInterface {
+export interface IAuthResponse {
 
   accessToken: string,
   token : AuthToken,
@@ -19,7 +19,7 @@ export interface AuthResponseInterface {
   activeSmartJourneyTracking: string,
 }
 
-export class AuthResponse implements AuthResponseInterface {
+export class AuthResponse implements IAuthResponse {
   accessToken: string;
   token: AuthToken;
   supportId: string;
@@ -38,7 +38,7 @@ export class AuthResponse implements AuthResponseInterface {
   showTermsAndConditions: boolean;
   activeSmartJourneyTracking: string;
 
-  constructor(authResponse: AuthResponseInterface) {
+  constructor(authResponse: IAuthResponse) {
     this.accessToken = authResponse.accessToken;
     this.token = new AuthToken(authResponse.token);
     this.supportId = authResponse.supportId;
@@ -72,16 +72,16 @@ export class AuthResponse implements AuthResponseInterface {
 
 }
 
-export interface AuthTokenInterface {
+export interface IAuthToken {
   accessToken: string,
   refreshToken: string
 }
 
-export class AuthToken implements AuthTokenInterface{
+export class AuthToken implements IAuthToken{
   accessToken: string;
   refreshToken: string;
 
-  constructor(tokenResponse : AuthTokenInterface) {
+  constructor(tokenResponse : IAuthToken) {
     this.accessToken = tokenResponse.accessToken;
     this.refreshToken = tokenResponse.refreshToken;
   }

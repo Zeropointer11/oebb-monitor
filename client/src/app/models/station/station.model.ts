@@ -1,4 +1,4 @@
-export interface StationInterface {
+export interface IStation {
   number: string;
   name: string;
   meta: string | null;
@@ -6,14 +6,14 @@ export interface StationInterface {
   latitude : number | null;
 }
 
-export class Station implements StationInterface {
+export class Station implements IStation {
   number: string;
   name: string;
   meta: string | null;
   longitude: number | null;
   latitude: number | null;
 
-  constructor(stationResponse: StationInterface) {
+  constructor(stationResponse: IStation) {
     this.number = stationResponse.number;
     this.name = stationResponse.name;
     this.meta = stationResponse.meta ?? null;

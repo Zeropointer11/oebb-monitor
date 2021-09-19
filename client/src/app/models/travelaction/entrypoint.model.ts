@@ -4,7 +4,7 @@ import { Station } from "../station/station.model";
 import { Filter } from "./filter.model";
 import { TimeRange } from "./timeranges.model";
 
-export interface EntrypointInterface {
+export interface IEntrypoint {
   id : string | null;
   registrationRequired : boolean;
   dateMandatory: string | null;
@@ -28,7 +28,7 @@ export interface EntrypointInterface {
   toFixed: boolean;
 }
 
-export class Entrypoint implements EntrypointInterface {
+export class Entrypoint implements IEntrypoint {
   id: string | null;
   registrationRequired: boolean;
   dateMandatory: string | null;
@@ -51,7 +51,7 @@ export class Entrypoint implements EntrypointInterface {
   to: Station | null = null;
   toFixed: boolean;
 
-  constructor(entrypointResponse : EntrypointInterface) {
+  constructor(entrypointResponse : IEntrypoint) {
     this.id = entrypointResponse.id;
     this.registrationRequired = entrypointResponse.registrationRequired;
     this.defaultQuantity = entrypointResponse.defaultQuantity ?? 1;

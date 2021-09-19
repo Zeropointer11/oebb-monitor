@@ -1,6 +1,6 @@
 import { LocalizedString } from "../general/localizedstring.model";
 
-export interface CustomAttributeInterface {
+export interface ICustomAttribute {
   id:              string,
   type:            string,
   label:           LocalizedString,
@@ -16,7 +16,7 @@ export interface CustomAttributeInterface {
   show_attributes: string,
 }
 
-export class CustomAttribute implements CustomAttributeInterface {
+export class CustomAttribute implements ICustomAttribute {
   id: string;
   type: string;
   label: LocalizedString;
@@ -31,7 +31,7 @@ export class CustomAttribute implements CustomAttributeInterface {
   list_id: string;
   show_attributes: string;
 
-  constructor(data : CustomAttributeInterface) {
+  constructor(data : ICustomAttribute) {
     this.id = data.id;
     this.type = data.type;
     this.label = new LocalizedString(data.label);
@@ -49,36 +49,36 @@ export class CustomAttribute implements CustomAttributeInterface {
 
 }
 
-export interface ListOptionsInterface {
+export interface IListOptions {
   listId:     string,
   pageNumber: number,
   pageSize:   number,
 }
 
-export class ListOptions implements ListOptionsInterface {
+export class ListOptions implements IListOptions {
   listId: string;
   pageNumber: number;
   pageSize: number;
 
-  constructor(data : ListOptionsInterface) {
+  constructor(data : IListOptions) {
     this.listId = data.listId;
     this.pageNumber = data.pageNumber;
     this.pageSize = data.pageSize;
   }
 }
 
-export interface ListValueInterface {
+export interface IListValue {
   label:    LocalizedString,
   priority: number,
   value:    string,
 }
 
-export class ListValue implements ListValueInterface {
+export class ListValue implements IListValue {
   label: LocalizedString;
   priority: number;
   value: string;
 
-  constructor(data : ListValueInterface) {
+  constructor(data : IListValue) {
     this.label = new LocalizedString(data.label);
     this.priority = data.priority;
     this.value = data.value;

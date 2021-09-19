@@ -1,19 +1,19 @@
 import { LocalizedString } from "../general/localizedstring.model";
 
-export interface FilterInterface {
+export interface IFilter {
   header: FilterHeader | null;
   elements : FilterElement[] | null;
   active: boolean;
   discardedConnections: string[] | null;
 }
 
-export class Filter implements FilterInterface {
+export class Filter implements IFilter {
   header: FilterHeader | null;
   elements: FilterElement[] | null;
   active: boolean;
   discardedConnections: string[] | null;
 
-  constructor(data : FilterInterface) {
+  constructor(data : IFilter) {
     this.header = data.header;
     this.active = data.active ?? true;
     this.discardedConnections = data.discardedConnections;

@@ -1,17 +1,17 @@
-export interface LocalizedStringInterface {
+export interface ILocalizedString {
   de: string | null,
   en: string | null,
   it: string | null,
   fr: string | null,
 }
 
-export class LocalizedString implements LocalizedStringInterface {
+export class LocalizedString implements ILocalizedString {
   de: string | null;
   en: string | null;
   it: string | null;
   fr: string | null;
 
-  constructor(data : LocalizedStringInterface) {
+  constructor(data : ILocalizedString) {
     this.de = data.de;
     this.en = data.en;
     this.it = data.it;

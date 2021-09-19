@@ -2,7 +2,7 @@ import { ConnectionStation } from "./connectionstation.model";
 import { ConnectionSection } from "./section.model";
 import { ConnectionDetailInfo, TimeTableReducedScope } from "./timetable.model";
 
-export interface ConnectionInterface {
+export interface IConnection {
   id:               string | null;
   from:             ConnectionStation | null;
   to:               ConnectionStation | null;
@@ -16,7 +16,7 @@ export interface ConnectionInterface {
   specialPriceInfo: string | null;
   infos:            ConnectionDetailInfo[] | null;
 }
-export class Connection implements ConnectionInterface {
+export class Connection implements IConnection {
   id: string | null;
   from: ConnectionStation | null = null;
   to: ConnectionStation | null = null;
@@ -30,7 +30,7 @@ export class Connection implements ConnectionInterface {
   specialPriceInfo: string | null;
   infos: ConnectionDetailInfo[] | null;
 
-  constructor(data : ConnectionInterface) {
+  constructor(data : IConnection) {
     this.id = data.id;
     if (data.from != null) {
       this.from = new ConnectionStation(data.from);

@@ -2,18 +2,18 @@ import { Entrypoint } from "./entrypoint.model";
 import { Station } from "../station/station.model";
 import { LocalizedString } from "../general/localizedstring.model";
 
-export interface TravelActionResponseInterface {
+export interface ITravelActionResponse {
   travelActions : Array<TravelAction>;
 }
 
-export class TravelActionResponse implements TravelActionResponseInterface {
+export class TravelActionResponse implements ITravelActionResponse {
   travelActions : Array<TravelAction>;
-  constructor(response : TravelActionResponseInterface) {
+  constructor(response : ITravelActionResponse) {
     this.travelActions = response.travelActions.map(t => new TravelAction(t));
   }
 }
 
-export interface TravelActionInterface {
+export interface ITravelAction {
   id : string | null;
   icon: string| null;
   backgroundColor: string | null;
@@ -31,7 +31,7 @@ export interface TravelActionInterface {
   iconType : string | null;
   shopEntryName: string | null;
 }
-export class TravelAction implements TravelActionInterface {
+export class TravelAction implements ITravelAction {
   id: string | null;
   icon: string | null;
   backgroundColor: string | null;
@@ -49,7 +49,7 @@ export class TravelAction implements TravelActionInterface {
   iconType: string | null;
   shopEntryName: string | null;
 
-  constructor(travelActionResponse : TravelActionInterface) {
+  constructor(travelActionResponse : ITravelAction) {
     this.id = travelActionResponse.id;
     this.icon = travelActionResponse.icon;
     this.backgroundColor = travelActionResponse.backgroundColor;

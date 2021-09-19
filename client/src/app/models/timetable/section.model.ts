@@ -1,13 +1,13 @@
-import { LocalizedString, LocalizedStringInterface } from "../general/localizedstring.model";
+import { LocalizedString, ILocalizedString } from "../general/localizedstring.model";
 import { ConnectionStation } from "./connectionstation.model";
 import { ConnectionDetailInfo } from "./timetable.model";
 
-export interface ConnectionSectionInterface {
+export interface IConnectionSection {
   id:                                   string | null;
   from:                                 ConnectionStation | null;
   to:                                   ConnectionStation | null;
   type:                                 string | null;
-  category:                             ConnectionSectionCategoryInterface | null;
+  category:                             IConnectionSectionCategory | null;
   sectionIdx:                           number | null;
   infos:                                ConnectionDetailInfo[] | null;
   passlist:                             ConnectionStation[] | null;
@@ -16,7 +16,7 @@ export interface ConnectionSectionInterface {
   durationSum:                          number;
 }
 
-export class ConnectionSection implements ConnectionSectionInterface {
+export class ConnectionSection implements IConnectionSection {
   id: string | null;
   from: ConnectionStation | null = null;
   to: ConnectionStation | null = null;
@@ -29,7 +29,7 @@ export class ConnectionSection implements ConnectionSectionInterface {
   hasRealtime: boolean;
   durationSum: number;
 
-  constructor(data : ConnectionSectionInterface) {
+  constructor(data : IConnectionSection) {
     this.id = data.id;
 
     if (data.category != null) {
@@ -53,7 +53,7 @@ export class ConnectionSection implements ConnectionSectionInterface {
 
 }
 
-export interface ConnectionSectionCategoryInterface {
+export interface IConnectionSectionCategory {
   name:                    string | null;
   number:                  string | null;
   place:                   LocalizedString | null;
@@ -84,7 +84,7 @@ export interface ConnectionSectionCategoryInterface {
   parallelLongName:        LocalizedString | null;
 }
 
-export class ConnectionSectionCategory implements ConnectionSectionCategoryInterface {
+export class ConnectionSectionCategory implements IConnectionSectionCategory {
   name: string | null;
   number: string | null;
   place: LocalizedString | null = null;
@@ -107,7 +107,7 @@ export class ConnectionSectionCategory implements ConnectionSectionCategoryInter
   parallelDisplayName: string | null;
   parallelLongName: LocalizedString | null = null;
 
-  constructor(data : ConnectionSectionCategoryInterface) {
+  constructor(data : IConnectionSectionCategory) {
     this.name = data.name;
     this.number = data.number;
     if (data.place != null) {

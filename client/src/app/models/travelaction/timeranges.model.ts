@@ -1,12 +1,12 @@
-export interface TimeRangeInterface {
+export interface ITimeRange {
   begin : Date | null
   end : Date | null
 }
 
-export class TimeRange  implements TimeRangeInterface{
+export class TimeRange  implements ITimeRange{
   begin: Date | null = null;
   end: Date | null = null;
-  constructor(data : TimeRangeInterface) {
+  constructor(data : ITimeRange) {
     if(data.begin != null) {
       this.begin = new Date(data.begin);
     }

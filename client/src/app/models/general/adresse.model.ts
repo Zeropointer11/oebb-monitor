@@ -1,6 +1,6 @@
 import { LocalizedString } from "./localizedstring.model";
 
-export interface AdresseInterface {
+export interface IAdresse {
   type:           string
   label:          LocalizedString
   city:           string
@@ -10,7 +10,7 @@ export interface AdresseInterface {
   countryText:    string
 }
 
-export class Adresse implements AdresseInterface {
+export class Adresse implements IAdresse {
   type: string;
   label: LocalizedString;
   city: string;
@@ -19,7 +19,7 @@ export class Adresse implements AdresseInterface {
   countryIsoCode: string;
   countryText: string;
 
-  constructor(data : AdresseInterface) {
+  constructor(data : IAdresse) {
     this.type = data.type;
     this.label = new LocalizedString(data.label)
     this.city = data.city;

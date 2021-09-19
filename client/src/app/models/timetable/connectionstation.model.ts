@@ -1,5 +1,5 @@
 
-export interface ConnectionStationInterface {
+export interface IConnectionStation {
   id:                         string | null;
   name:                       string | null;
 
@@ -19,7 +19,7 @@ export interface ConnectionStationInterface {
   showAsResolvedMetaStation:  boolean;
 }
 
-export class ConnectionStation implements ConnectionStationInterface {
+export class ConnectionStation implements IConnectionStation {
   id: string | null;
   name: string | null;
   departure: Date | null = null;
@@ -33,7 +33,7 @@ export class ConnectionStation implements ConnectionStationInterface {
   esn: number;
   showAsResolvedMetaStation: boolean;
 
-  constructor(data : ConnectionStationInterface) {
+  constructor(data : IConnectionStation) {
     this.id = data.id;
 
     if (data.departure !== null){

@@ -4,9 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, mergeMap, tap } from 'rxjs/operators';
 
-import { AuthResponse, AuthResponseInterface, AuthToken } from '../models/general/session.model';
+import { AuthResponse, IAuthResponse, AuthToken } from '../models/general/session.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Station, StationInterface } from '../models/station/station.model';
+import { Station, IStation } from '../models/station/station.model';
 import { environment } from 'src/environments/environment';
 import { TravelAction, TravelActionResponse } from '../models/travelaction/travelaction.model';
 import { TravelActionRequest } from '../models/travelaction/request.travelaction.model';
@@ -55,7 +55,7 @@ export class OebbApiService {
 
   private init(): Observable<AuthResponse> {
     let url = `${this.baseUrl}/api/auth`
-    return this.http.get<AuthResponseInterface>(url,
+    return this.http.get<IAuthResponse>(url,
     {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ export class OebbApiService {
 
   private _searchStation(name: string) : Observable<Array<Station>> {
     let url = `${this.baseUrl}/api/station/search`
-    return this.http.get<Array<StationInterface>>(url, {
+    return this.http.get<Array<IStation>>(url, {
       params: {
         name: name
       },

@@ -3,7 +3,7 @@ import { Adresse } from "../general/adresse.model";
 import { LocalizedString } from "../general/localizedstring.model";
 import { CustomAttribute } from "./customattribute.model";
 
-export interface PassengerInterface {
+export interface IPassenger {
   type:                string,
   id:                  number,
   me:                  boolean,
@@ -20,7 +20,7 @@ export interface PassengerInterface {
   customAttributes:    CustomAttribute[],
 }
 
-export class Passenger implements PassengerInterface {
+export class Passenger implements IPassenger {
   public type: string;
   public id: number;
   public me: boolean;
@@ -36,7 +36,7 @@ export class Passenger implements PassengerInterface {
   public addresses: Adresse[];
   public customAttributes: CustomAttribute[];
 
-  constructor(data : PassengerInterface) {
+  constructor(data : IPassenger) {
     this.type = data.type;
     this.id = data.id;
     this.me = data.me;
@@ -79,7 +79,7 @@ export class Passenger implements PassengerInterface {
   }
 }
 
-export interface ChallengedFlagsInterface {
+export interface IChallengedFlags {
   hasAssistanceDog:   boolean,
   hasWheelchair:      boolean,
   hasAttendant:       boolean,
@@ -87,13 +87,13 @@ export interface ChallengedFlagsInterface {
 
 }
 
-export class ChallengedFlags implements ChallengedFlagsInterface {
+export class ChallengedFlags implements IChallengedFlags {
   hasAssistanceDog: boolean;
   hasWheelchair: boolean;
   hasAttendant: boolean;
   hasHandicappedPass: boolean;
 
-  constructor(data : ChallengedFlagsInterface) {
+  constructor(data : IChallengedFlags) {
     this.hasAssistanceDog = data.hasAssistanceDog;
     this.hasWheelchair = data.hasWheelchair;
     this.hasAttendant = data.hasAttendant;

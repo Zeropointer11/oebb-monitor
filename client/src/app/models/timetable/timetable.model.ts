@@ -2,7 +2,7 @@ import { LocalizedString } from "../general/localizedstring.model";
 import { Station } from "../station/station.model";
 import { Connection } from "./connection.model";
 
-export interface TimeTableInterface {
+export interface ITimeTable {
   id: string | null;
   scrolling: string | null;
   connections: Connection[] | null;
@@ -10,14 +10,14 @@ export interface TimeTableInterface {
   infos:       ConnectionDetailInfo[] | null;
 }
 
-export class TimeTable implements TimeTableInterface {
+export class TimeTable implements ITimeTable {
   id: string | null;
   scrolling: string | null;
   connections: Connection[] | null = null;
   reducedScope: TimeTableReducedScope[][] | null = null;
   infos: ConnectionDetailInfo[] | null = null;
 
-  constructor(data : TimeTableInterface) {
+  constructor(data : ITimeTable) {
     this.id = data.id;
     this.scrolling = data.scrolling;
     if (data.connections != null) {
@@ -32,7 +32,7 @@ export class TimeTable implements TimeTableInterface {
   }
 }
 
-export interface ConnectionDetailInterface {
+export interface IConnectionDetail {
   category:     string | null;
   header:       string | null;
   validFrom:    string | null;
@@ -47,7 +47,7 @@ export interface ConnectionDetailInterface {
   internalLink: string | null;
 }
 
-export class ConnectionDetailInfo implements ConnectionDetailInterface {
+export class ConnectionDetailInfo implements IConnectionDetail {
   category: string | null;
   header: string | null;
   validFrom: string | null;
@@ -61,7 +61,7 @@ export class ConnectionDetailInfo implements ConnectionDetailInterface {
   externalLink: string | null;
   internalLink: string | null;
 
-  constructor(data : ConnectionDetailInterface) {
+  constructor(data : IConnectionDetail) {
     this.category = data.category;
     this.header = data.header;
     this.validFrom = data.validFrom;

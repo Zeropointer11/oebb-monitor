@@ -1,14 +1,14 @@
 import { LocalizedString } from "./localizedstring.model";
 
-export interface LocalizedErrorInterface {
+export interface ILocalizedError {
   title: LocalizedString | null;
   message: LocalizedString | null;
 }
 
-export class LocalizedError implements LocalizedErrorInterface {
+export class LocalizedError implements ILocalizedError {
   title: LocalizedString | null = null;
   message: LocalizedString | null = null;
-  constructor(data : LocalizedErrorInterface) {
+  constructor(data : ILocalizedError) {
     if (data.title != null) {
       this.title = new LocalizedString(data.title);
     }
