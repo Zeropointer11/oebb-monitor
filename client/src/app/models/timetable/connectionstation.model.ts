@@ -66,4 +66,17 @@ export class ConnectionStation implements IConnectionStation {
     return this.arrivalDelay ?? this.arrival;
   }
 
+  displayName(): string {
+    let displayName = '';
+    if(this.name !== null
+      && this.name!.length > 0) {
+      if(displayName.length > 0) {
+        displayName += ' ';
+      }
+      displayName += this.name;
+    }
+
+    return displayName;
+  }
+
 }

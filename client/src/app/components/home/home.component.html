@@ -1,15 +1,22 @@
 <p>home works!</p>
 <div class="card">
   <div class="card-body">
-    <div *ngFor="let station of stations">
+    <div *ngFor="let station of viewModel.stations">
       <div>{{ station.displayName() }}</div>
     </div>
   </div>
 </div>
 <div class="card">
   <div class="card-body">
-    <div *ngFor="let travelAction of travelActions">
+    <div *ngFor="let travelAction of viewModel.travelActions">
       <div>{{ travelAction.id }}, {{ travelAction.type }}</div>
+    </div>
+  </div>
+</div>
+<div class="card" *ngIf="viewModel.connectionItemVms.length > 0">
+  <div class="card-body">
+    <div *ngFor="let itemVm of viewModel.connectionItemVms">
+      <app-connection [viewModel]=itemVm></app-connection>
     </div>
   </div>
 </div>

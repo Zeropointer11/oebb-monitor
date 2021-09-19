@@ -41,7 +41,7 @@ export class Connection implements IConnection {
     this.pastConnection = data.pastConnection ?? false;
     this.reducedScopes = data.reducedScopes;
 
-    this.sections = data.sections;
+    this.sections = data.sections?.map(s => new ConnectionSection(s)) ?? null;
 
     this.switches = data.switches;
     this.duration = data.duration;

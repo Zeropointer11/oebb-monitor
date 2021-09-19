@@ -66,4 +66,10 @@ router.post("/travelActions", function (req, res) {
    req.body, headers, res)
 })
 
+router.post("/timetable", function (req, res) {
+  let headers = getAutHeadersFrom(req);
+  callPost('https://tickets.oebb.at/api/hafas/v4/timetable',
+    req.body, headers, res)
+})
+
 module.exports = router;

@@ -10,6 +10,8 @@ import { Station, IStation } from '../models/station/station.model';
 import { environment } from 'src/environments/environment';
 import { TravelAction, TravelActionResponse } from '../models/travelaction/travelaction.model';
 import { TravelActionRequest } from '../models/travelaction/request.travelaction.model';
+import { TimeTableRequest } from '../models/timetable/request.timetable.model';
+import { TimeTable } from '../models/timetable/timetable.model';
 
 
 @Injectable({
@@ -48,6 +50,12 @@ export class OebbApiService {
   travelAction(request : TravelActionRequest) : Observable<Array<TravelAction>> {
     return this.auth().pipe(
       mergeMap(_ => this._travelAction(request))
+    )
+  }
+
+  timeTable(request: TimeTableRequest): Observable<TimeTable> {
+    return this.auth().pipe(
+      mergeMap(_ => this._timeTable(request))
     )
   }
 
@@ -95,6 +103,16 @@ export class OebbApiService {
     )
   }
 
+  private _timeTable(request: TimeTableRequest): Observable<TimeTable> {
+    let url = `${this.baseUrl}/api/timetable`
+    return this.http.post<TimeTable>(url, request, {
+      headers: this.requestHeaders
+    })
+    .pipe(
+      map(x => new TimeTable(x))
+    )
+  }
+
   private isTokenExpired(): Boolean {
     if(this.lastLoginResponse !== null && this.lastLoginResponse !== undefined) {
       const token = this.lastLoginResponse.getAccessToken();
@@ -102,14 +120,6 @@ export class OebbApiService {
       const isExpired = helper.isTokenExpired(token);
       console.log('isTokenExpired', isExpired);
       return isExpired;
-      /*
-      const { exp } = jwt.decode(token) as {
-        exp: number;
-      };
-      const expirationDatetimeInSeconds = exp * 1000;
-      return Date.now() >= expirationDatetimeInSeconds;
-      */
-      //return this.jwtHelper.isTokenExpired(this.lastLoginResponse.getAccessToken())
     }
     else {
       return true;

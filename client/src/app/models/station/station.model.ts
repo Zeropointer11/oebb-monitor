@@ -1,5 +1,5 @@
 export interface IStation {
-  number: string;
+  number: number;
   name: string;
   meta: string | null;
   longitude : number | null;
@@ -7,11 +7,21 @@ export interface IStation {
 }
 
 export class Station implements IStation {
-  number: string;
+  number: number;
   name: string;
   meta: string | null;
   longitude: number | null;
   latitude: number | null;
+
+  static from(name :string, number : number) {
+    return new this({
+      number,
+      name,
+      meta: null,
+      latitude: null,
+      longitude: null,
+    })
+  }
 
   constructor(stationResponse: IStation) {
     this.number = stationResponse.number;

@@ -8,13 +8,15 @@ import { AboutComponent } from './components/about/about.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { ConnectionComponent } from './components/home/connection/connection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    ConnectionComponent
   ],
   imports: [
     BrowserModule,

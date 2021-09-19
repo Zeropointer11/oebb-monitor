@@ -1,0 +1,55 @@
+@import (reference) "../../../../less/responsive.less";
+
+@mobile-padding-connection-container: 19px 5px 0 5px;
+
+.connection {
+  position: relative;
+  margin-bottom: 3px;
+
+  white-space: nowrap;
+  display: flex;
+  width: 100%;
+
+  .time {
+    z-index: 2;
+    min-height: 105px;
+    text-align: center;
+    text-align: right;
+    color: black;
+    padding: @mobile-padding-connection-container;
+    background-color:gray;
+    border-bottom: 1px solid  lightgray;
+    width: 52px;
+
+    //320
+    @media (min-width: @screen-xs-sm) {
+      width: 70px;
+    }
+
+    //480
+    @media (min-width: @screen-sm) {
+      width: 75px;
+    }
+
+    //720
+    @media (min-width: @screen-md) {
+      width: 83px;
+      padding: 19px 10px 0 0;
+    }
+
+    //1024
+    @media (min-width: @screen-lg) {
+      width: 88px;
+    }
+  }
+
+  .connectionInfo {
+
+    padding: 19px 10px 10px 10px;
+    //background-color: gray;
+    overflow-x: hidden;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+}
