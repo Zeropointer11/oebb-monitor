@@ -10,8 +10,7 @@ import { DurationPipe } from "src/app/helper/duration.helper";
 })
 export class ConnectionComponent implements OnInit {
 
-  @Input()
-  viewModel!: ConnectionViewModel;
+  @Input() viewModel!: ConnectionViewModel;
 
   constructor() { }
 

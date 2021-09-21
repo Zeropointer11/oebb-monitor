@@ -1,0 +1,11 @@
+<div class="connectionDetails">
+  <span class="duration">{{viewModel.duration()}}</span>
+  <span *ngIf="viewModel.switches()">
+    , {{ viewModel.switches() }} x <span>umsteigen:</span>
+  </span>
+  <div *ngIf="viewModel.switches()">
+    {{viewModel.sectionChangeName()}}
+  </div>
+  <div>von: {{ viewModel.fromName() }}</div>
+  <div>nach: {{ viewModel.toName() }}</div>
+</div>

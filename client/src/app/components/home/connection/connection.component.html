@@ -1,22 +1,16 @@
-<div class="connection">
-  <div class="time departure">
-      {{viewModel.connection.from?.departure | date: 'HH:mm' }}
-  </div>
-
-  <div class="connectionInfo">
-    <span class="duration">{{viewModel.duration()}}</span>
-    <span *ngIf="viewModel.switches()">
-      , {{ viewModel.switches() }} x <span>umsteigen:</span>
-    </span>
-    <div *ngIf="viewModel.switches()">
-      {{viewModel.sectionChangeName()}}
+<div class="card">
+  <div class="card-body">
+    <div class="connection">
+      <div class="time departure">
+        {{viewModel.connection.from?.departure | date: 'HH:mm'}}
+      </div>
+      <div class="connectionInfo">
+        <app-connection-sections [viewModel]="viewModel"></app-connection-sections>
+        <app-connection-details [viewModel]="viewModel"></app-connection-details>
+      </div>
+      <div class="time arrival">
+        {{viewModel.connection.to?.arrival | date: 'HH:mm'}}
+      </div>
     </div>
-    <div>von: {{ viewModel.fromName() }}</div>
-    <div>nach: {{ viewModel.toName() }}</div>
-  </div>
-
-  <div class="time arrival">
-
-    {{viewModel.connection.to?.arrival | date: 'HH:mm' }}
   </div>
 </div>

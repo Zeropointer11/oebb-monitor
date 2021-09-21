@@ -4,8 +4,11 @@ import { ConnectionSection } from "src/app/models/timetable/section.model";
 
 export class ConnectionViewModel {
   connection : Connection
-  constructor(conn : Connection) {
+  longestDuration : number;
+
+  constructor(conn : Connection, longestDuration: number) {
     this.connection = conn;
+    this.longestDuration = longestDuration;
   }
 
   fromName() : string {
@@ -33,5 +36,12 @@ export class ConnectionViewModel {
       if (result.length > 0) result += ', ';
       return result + section.to?.displayName() ?? ''
     }, '') ?? '';
+  }
+
+  getDurationSum(): number {
+    return this.connection.sections
+    ?.reduce((result , section) => {
+      return result + section.duration;
+    }, 0) ?? 0;
   }
 }

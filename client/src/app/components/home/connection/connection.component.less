@@ -1,55 +1,72 @@
 @import (reference) "../../../../less/responsive.less";
 
-@mobile-padding-connection-container: 19px 5px 0 5px;
+.card {
+  margin-bottom: 10px;
+  border-color: rgb(185, 185, 185);
 
-.connection {
-  position: relative;
-  margin-bottom: 3px;
+  .card-body {
+    padding: 0px;
 
-  white-space: nowrap;
-  display: flex;
-  width: 100%;
+    .connection {
+      position: relative;
+      margin-bottom: 3px;
 
-  .time {
-    z-index: 2;
-    min-height: 105px;
-    text-align: center;
-    text-align: right;
-    color: black;
-    padding: @mobile-padding-connection-container;
-    background-color:gray;
-    border-bottom: 1px solid  lightgray;
-    width: 52px;
+      white-space: nowrap;
+      display: flex;
+      width: 100%;
 
-    //320
-    @media (min-width: @screen-xs-sm) {
-      width: 70px;
+      .time {
+        z-index: 2;
+        min-height: 105px;
+        text-align: center;
+        text-align: right;
+        padding: 10px 10px 0px 5px;
+        width: 52px;
+
+        //320
+        @media (min-width: @screen-xs-sm) {
+          width: 70px;
+        }
+
+        //480
+        @media (min-width: @screen-sm) {
+          width: 75px;
+        }
+
+        //720
+        @media (min-width: @screen-md) {
+          width: 83px;
+        }
+
+        //1024
+        @media (min-width: @screen-lg) {
+          width: 88px;
+        }
+      }
+
+      .departure {
+        border-right-color: rgb(185, 185, 185);
+        border-right: solid;
+        border-right-width: 1px;
+      }
+
+      .arrival {
+        border-left: rgb(185, 185, 185);
+        border-left: solid;
+        border-width: 1px;
+      }
+
+      .connectionInfo {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        overflow-x: hidden;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+      }
     }
-
-    //480
-    @media (min-width: @screen-sm) {
-      width: 75px;
-    }
-
-    //720
-    @media (min-width: @screen-md) {
-      width: 83px;
-      padding: 19px 10px 0 0;
-    }
-
-    //1024
-    @media (min-width: @screen-lg) {
-      width: 88px;
-    }
-  }
-
-  .connectionInfo {
-
-    padding: 19px 10px 10px 10px;
-    //background-color: gray;
-    overflow-x: hidden;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
   }
 }

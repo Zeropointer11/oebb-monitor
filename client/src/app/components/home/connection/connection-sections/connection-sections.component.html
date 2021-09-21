@@ -1,0 +1,10 @@
+<div class="sections"
+[style.width.%]="sectionsWidth">
+  <div class="section" [style.flex]="sectionsValues[i]"
+  *ngFor="let section of viewModel.connection.sections; let i = index">
+    <app-connection-section-item
+    [viewModel]="viewModel"
+    [section]="section">
+    </app-connection-section-item>
+  </div>
+</div>

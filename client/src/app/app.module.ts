@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,13 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ConnectionComponent } from './components/home/connection/connection.component';
+import { ConnectinSectionsComponent } from './components/home/connection/connection-sections/connection-sections.component';
+import { ConnectionDetailsComponent } from './components/home/connection/connection-details/connection-details.component';
+import { ConnectionSectionItemComponent } from './components/home/connection/connection-sections/connection-section-item/connection-section-item.component';
+import localeDe from '@angular/common/locales/de';
+import {registerLocaleData} from '@angular/common';
+
+registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
@@ -16,7 +23,10 @@ import { ConnectionComponent } from './components/home/connection/connection.com
     HomeComponent,
     AboutComponent,
     NavMenuComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    ConnectinSectionsComponent,
+    ConnectionDetailsComponent,
+    ConnectionSectionItemComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,8 @@ import { ConnectionComponent } from './components/home/connection/connection.com
     AppRoutingModule,
   ],
   providers: [
-    Title
+    Title,
+    { provide: LOCALE_ID, useValue: "de-at"}
   ],
   bootstrap: [AppComponent]
 })
