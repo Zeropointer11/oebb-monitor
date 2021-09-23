@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ConnectionComponent } from './components/home/connection/connection.component';
 import { ConnectinSectionsComponent } from './components/home/connection/connection-sections/connection-sections.component';
@@ -14,6 +14,7 @@ import { ConnectionDetailsComponent } from './components/home/connection/connect
 import { ConnectionSectionItemComponent } from './components/home/connection/connection-sections/connection-section-item/connection-section-item.component';
 import localeDe from '@angular/common/locales/de';
 import {registerLocaleData} from '@angular/common';
+import { JsonDateInterceptor } from './service/http.interceptor';
 
 registerLocaleData(localeDe);
 
@@ -40,7 +41,8 @@ registerLocaleData(localeDe);
   ],
   providers: [
     Title,
-    { provide: LOCALE_ID, useValue: "de-at"}
+    { provide: LOCALE_ID, useValue: "de-at"},
+    { provide: HTTP_INTERCEPTORS, useClass: JsonDateInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

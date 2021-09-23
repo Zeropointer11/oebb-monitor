@@ -1,11 +1,12 @@
 import { Passenger } from "../passenger/passenger.model";
 import { Station } from "../station/station.model";
+import { formatDate } from "@angular/common";
 
 export class TimeTableRequest {
   constructor(
   public travelActionId:    string,
-  public datetimeDeparture: Date,
-  public datetimeArrival:   Date | null,
+  private datetimeDeparture:string,
+  private datetimeArrival:  string | null,
   public from:              Station | null,
   public to:                Station | null,
   public entryPointId:      string | null,
@@ -21,13 +22,26 @@ export class TimeTableRequest {
   ){}
 
   setDatetimeDeparture(date : Date): TimeTableRequest {
-    this.datetimeDeparture = date;
+    this.datetimeDeparture = this.convertToApiDateString(date);
+    return this;
+  }
+
+  setDateTimeArrival(date : Date): TimeTableRequest {
+    this.datetimeArrival = this.convertToApiDateString(date);
     return this;
   }
 
   setFilter(filter : TimeTableFilter): TimeTableRequest {
     this.filter = filter;
     return this;
+  }
+
+  convertToApiDateString(date : Date) : string {
+    return TimeTableRequest.convertToApiDateString(date);
+  }
+
+  static convertToApiDateString(date : Date) : string {
+    return formatDate(new Date(),'yyyy-MM-dd\'T\'HH:mm:ss.SSS', 'de-AT');
   }
 
   public static getDefaultRequest(
@@ -37,7 +51,7 @@ export class TimeTableRequest {
     customVias : Station[] = []): TimeTableRequest {
     return new TimeTableRequest(
       travelActionId,
-      new Date(),
+      this.convertToApiDateString(new Date()),
       null,
       from,
       to,

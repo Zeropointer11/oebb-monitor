@@ -24,9 +24,13 @@ export class HomeViewModel {
       }
     })
     */
+    var from = Station.from("Bad Erlach", 1132306);
+    //from = Station.from("Innsbruck", 1170101)
+
+    var to = Station.from("Wien", 1190100);
+
     service.travelAction(new TravelActionRequest(
-      Station.from("Bad Erlach", 1132306),
-      Station.from("Wien", 1190100)
+      from, to
     ))
     .pipe(
       map(travelActions => {
