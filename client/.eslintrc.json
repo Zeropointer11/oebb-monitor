@@ -35,11 +35,11 @@
             "style": "kebab-case"
           }
         ],
-        'max-len': ['error', {
-          'code': 180,
-          'tabWidth': 2
+        "max-len": ["error", {
+          "code": 180,
+          "tabWidth": 2
         }],        
-        'quotes': ['error', 'single'],
+        "quotes": ["error", "single"]
       }
     },
     {
