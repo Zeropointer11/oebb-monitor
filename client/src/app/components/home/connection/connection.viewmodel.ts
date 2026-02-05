@@ -30,12 +30,9 @@ export class ConnectionViewModel {
   sectionChangeName(): string {
     if ((this.connection.sections?.length ?? 0) === 0) return '';
     return this.connection.sections
-    ?.reduce((result : string, section : ConnectionSection, index : number) => {
-      if (section.type?.toLocaleLowerCase() === 'walk') return result;
-      if (index == (this.connection.sections?.length ?? 0) - 1) return result;
-      if (result.length > 0) result += ', ';
-      return result + section.to?.displayName() ?? ''
-    }, '') ?? '';
+    ?.filter((section, index, array) => index < array.length - 1 && section.type?.toLocaleLowerCase() !== 'walk')
+    .map(section => section.to?.displayName() ?? '')
+    .join(', ') ?? '';
   }
 
   getDurationSum(): number {
