@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ConnectionSection } from 'src/app/models/timetable/section.model';
 import { ConnectionViewModel } from '../connection.viewmodel';
 
 @Component({
@@ -37,5 +38,9 @@ export class ConnectinSectionsComponent implements OnInit {
           return '0 1 ' + percent + '%';
         }
       }) ?? [];
+  }
+
+  trackBySection(index: number, item: ConnectionSection): string | null {
+    return item.id;
   }
 }

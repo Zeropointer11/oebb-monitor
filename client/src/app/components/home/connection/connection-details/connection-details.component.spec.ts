@@ -16,6 +16,13 @@ describe('ConnectionDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ConnectionDetailsComponent);
     component = fixture.componentInstance;
+    component.viewModel = {
+      duration: () => '1:30',
+      switches: () => 0,
+      sectionChangeName: () => '',
+      fromName: () => 'A',
+      toName: () => 'B'
+    } as any;
     fixture.detectChanges();
   });
 
