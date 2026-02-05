@@ -20,6 +20,7 @@ import { TimeTable } from '../models/timetable/timetable.model';
 export class OebbApiService {
   private baseUrl = environment.baseURL;
   private lastLoginResponse? : AuthResponse;
+  private stationCache = new Map<string, Array<Station>>();
 
   private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -42,8 +43,20 @@ export class OebbApiService {
     if (query.length == 0) {
       throw new Error('missing or invalid `query` parameter')
     }
+    if (this.stationCache.has(query)) {
+      const result = this.stationCache.get(query)!;
+      this.stationCache.delete(query);
+      this.stationCache.set(query, result);
+      return of(result);
+    }
     return this.auth().pipe(
-      mergeMap(_ => this._searchStation(query))
+      mergeMap(_ => this._searchStation(query)),
+      tap(stations => {
+        if (this.stationCache.size >= 50) {
+          this.stationCache.delete(this.stationCache.keys().next().value);
+        }
+        this.stationCache.set(query, stations);
+      })
     )
   }
 
