@@ -16,13 +16,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-              <a class="nav-link text-white" routerLink="/">
+            <li class="nav-item">
+              <a class="nav-link text-white"
+                 routerLink="/"
+                 routerLinkActive="active"
+                 [routerLinkActiveOptions]="{exact: true}"
+                 #rlaHome="routerLinkActive"
+                 [attr.aria-current]="rlaHome.isActive ? 'page' : null">
                 <i class="fas fa-home mr-1"></i><span>Home</span>
               </a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white" routerLink="/about">
+            <li class="nav-item">
+              <a class="nav-link text-white"
+                 routerLink="/about"
+                 routerLinkActive="active"
+                 #rlaAbout="routerLinkActive"
+                 [attr.aria-current]="rlaAbout.isActive ? 'page' : null">
                 <i class="far fa-question-circle mr-1"></i>About
               </a>
             </li>
