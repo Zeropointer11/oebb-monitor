@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { ConnectionComponent } from './connection.component';
 
@@ -8,7 +9,8 @@ describe('ConnectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnectionComponent ]
+      declarations: [ ConnectionComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   });
@@ -16,6 +18,9 @@ describe('ConnectionComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ConnectionComponent);
     component = fixture.componentInstance;
+    component.viewModel = {
+      connection: {}
+    } as any;
     fixture.detectChanges();
   });
 

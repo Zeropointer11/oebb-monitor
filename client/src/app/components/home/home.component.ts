@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OebbApiService } from 'src/app/service/oebb-api.service';
 import { HomeViewModel } from './home.viewmodel';
+import { ConnectionViewModel } from './connection/connection.viewmodel';
 
 @Component({
   selector: 'app-home',
@@ -17,4 +18,7 @@ export class HomeComponent {
     this.viewModel = new HomeViewModel(service);
   }
 
+  trackByConnection(index: number, item: ConnectionViewModel): string | null {
+    return item.connection.id;
+  }
 }

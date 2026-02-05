@@ -16,6 +16,16 @@ describe('ConnectionSectionItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ConnectionSectionItemComponent);
     component = fixture.componentInstance;
+    component.viewModel = {
+      pastConnection: false
+    } as any;
+    component.section = {
+      type: 'WALK',
+      category: {
+        barColor: '#000',
+        backgroundColor: '#fff'
+      }
+    } as any;
     fixture.detectChanges();
   });
 

@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { OebbApiService } from './oebb-api.service';
 
@@ -7,7 +8,9 @@ describe('OebbApiService', () => {
   let service: OebbApiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule]
+    });
     service = TestBed.inject(OebbApiService);
   });
 
@@ -16,10 +19,10 @@ describe('OebbApiService', () => {
   });
 
   it('should return value from Promise', () => {
-    service.searchStations("Wien", { results: 1 })
-    .then(result => {
+    service.searchStation("Wien")
+    .subscribe(result => {
       console.log(result);
       
     })
-  });  
+  });
 });

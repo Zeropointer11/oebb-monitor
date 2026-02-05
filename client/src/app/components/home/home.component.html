@@ -1,6 +1,6 @@
 <div class="" *ngIf="viewModel.connectionItemVms.length > 0">
   <div class="">
-    <div *ngFor="let itemVm of viewModel.connectionItemVms">
+    <div *ngFor="let itemVm of viewModel.connectionItemVms; trackBy: trackByConnection">
       <app-connection [viewModel]=itemVm></app-connection>
     </div>
   </div>
