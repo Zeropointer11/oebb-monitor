@@ -9,6 +9,24 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
+const handleError = (error, res) => {
+  // 🛡️ Sentinel: Secure error logging
+  // Only log safe information to prevent leaking sensitive headers or data
+  const safeLog = {
+    message: error.message,
+    status: error.response ? error.response.status : 'unknown',
+    url: error.config ? error.config.url : 'unknown'
+  };
+  console.error('External API Error:', safeLog);
+
+  // 🛡️ Sentinel: Secure error response
+  // Don't leak upstream error details to the client
+  const status = error.response ? error.response.status : 500;
+  res.status(status).send({
+    error: 'An error occurred while communicating with the OBB service.'
+  });
+};
+
 const callGet = (url, params, headers, res) => {
   axios.get(url,
   {
@@ -19,8 +37,7 @@ const callGet = (url, params, headers, res) => {
     res.status(response.status).send(response.data);
   })
   .catch(error => {
-    console.log('error:', error);
-    res.status(error.response.status).send(error.response);
+    handleError(error, res);
   })
 }
 
@@ -32,8 +49,7 @@ const callPost = (url, body, headers, res) => {
     res.status(response.status).send(response.data);
   })
   .catch(error => {
-    console.log('error:', error);
-    res.status(error.response.status).send(error.response);
+    handleError(error, res);
   })
 }
 
