@@ -59,12 +59,10 @@ export class HomeViewModel {
   }
 
   getLongestDuration(connections: IConnection[]) : number {
-    return connections
-    .filter(c => c.duration)
-    .reduce((currentDuration, con) => {
-       return currentDuration >= con.duration
-       ? currentDuration
-       : con.duration
-      }, 0);
+    return connections.reduce((currentDuration, con) => {
+      return con.duration && con.duration > currentDuration
+        ? con.duration
+        : currentDuration;
+    }, 0);
   }
 }
