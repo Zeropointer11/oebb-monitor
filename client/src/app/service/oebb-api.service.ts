@@ -20,6 +20,8 @@ import { TimeTable } from '../models/timetable/timetable.model';
 export class OebbApiService {
   private baseUrl = environment.baseURL;
   private lastLoginResponse? : AuthResponse;
+  private jwtHelper = new JwtHelperService();
+  private tokenExpirationDate: Date | null = null;
 
   private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -73,6 +75,7 @@ export class OebbApiService {
       map(x => new AuthResponse(x)),
       tap((response : AuthResponse) => {
         this.lastLoginResponse = response;
+        this.tokenExpirationDate = this.jwtHelper.getTokenExpirationDate(response.getAccessToken());
         this.updateHeader();
       })
     )
@@ -115,11 +118,10 @@ export class OebbApiService {
 
   private isTokenExpired(): Boolean {
     if(this.lastLoginResponse !== null && this.lastLoginResponse !== undefined) {
-      const token = this.lastLoginResponse.getAccessToken();
-      const helper = new JwtHelperService();
-      const isExpired = helper.isTokenExpired(token);
-      console.log('isTokenExpired', isExpired);
-      return isExpired;
+      if (this.tokenExpirationDate === null) {
+        return false;
+      }
+      return new Date() > this.tokenExpirationDate;
     }
     else {
       return true;
