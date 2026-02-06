@@ -21,7 +21,7 @@ export class ConnectionSection implements IConnectionSection {
   from: ConnectionStation | null = null;
   to: ConnectionStation | null = null;
   type: string | null;
-  category: ConnectionSectionCategory| null = null;
+  category: IConnectionSectionCategory| null = null;
   sectionIdx: number | null;
   infos: ConnectionDetailInfo[] | null;
   passlist: ConnectionStation[] | null;
@@ -32,8 +32,13 @@ export class ConnectionSection implements IConnectionSection {
   constructor(data : IConnectionSection) {
     this.id = data.id;
 
-    if (data.category != null) {
-      this.category = new ConnectionSectionCategory(data.category);
+    if (data.category) {
+      this.category = {
+        ...data.category,
+        barColor: data.category.backgroundColor,
+        barColorDisabled: data.category.backgroundColorDisabled,
+        train: data.category.train ?? false
+      };
     }
     this.sectionIdx = data.sectionIdx;
     if (data.from != null) {
@@ -56,10 +61,10 @@ export class ConnectionSection implements IConnectionSection {
 export interface IConnectionSectionCategory {
   name:                    string | null;
   number:                  string | null;
-  place:                   LocalizedString | null;
+  place:                   ILocalizedString | null;
   displayName:             string | null;
   direction:               string | null;
-  longName:                LocalizedString | null;
+  longName:                ILocalizedString | null;
   iconId:                  string | null;
 
   backgroundColor:         string | null;
@@ -81,67 +86,8 @@ export interface IConnectionSectionCategory {
   parallelName:            string | null;
   parallelNumber:          string | null;
   parallelDisplayName:     string | null;
-  parallelLongName:        LocalizedString | null;
+  parallelLongName:        ILocalizedString | null;
 }
 
-export class ConnectionSectionCategory implements IConnectionSectionCategory {
-  name: string | null;
-  number: string | null;
-  place: LocalizedString | null = null;
-  displayName: string | null;
-  direction: string | null;
-  longName: LocalizedString | null = null;
-  iconId: string | null;
-  backgroundColor: string | null;
-  backgroundColorDisabled: string | null;
-  fontColor: string | null;
-  fontColorDisabled: string | null;
-  barColor: string | null;
-  barColorDisabled: string | null;
-  journeyPreviewIconColor: string | null;
-  journeyPreviewIconId: string | null;
-  assistantIconId: string | null;
-  train: boolean;
-  parallelName: string | null;
-  parallelNumber: string | null;
-  parallelDisplayName: string | null;
-  parallelLongName: LocalizedString | null = null;
-
-  constructor(data : IConnectionSectionCategory) {
-    this.name = data.name;
-    this.number = data.number;
-    if (data.place != null) {
-      this.place = new LocalizedString(data.place);
-    }
-    this.displayName = data.displayName;
-    this.direction = data.direction;
-    if (data.longName != null) {
-      this.longName = new LocalizedString(data.longName);
-    }
-    this.iconId = data.iconId;
-
-    this.backgroundColor = data.backgroundColor;
-    this.backgroundColorDisabled = data.backgroundColorDisabled;
-
-    this.fontColor = data.fontColor;
-    this.fontColorDisabled = data.fontColorDisabled;
-
-    this.barColor = data.backgroundColor;
-    this.barColorDisabled = data.backgroundColorDisabled;
-
-    this.journeyPreviewIconColor = data.journeyPreviewIconColor;
-    this.journeyPreviewIconId = data.journeyPreviewIconId;
-
-    this.assistantIconId = data.assistantIconId;
-    this.train = data.train ?? false;
-
-    this.parallelName = data.parallelName;
-    this.parallelNumber = data.parallelNumber;
-    this.parallelDisplayName = data.parallelDisplayName;
-    if (data.parallelLongName != null) {
-      this.parallelLongName = new LocalizedString(data.parallelLongName);
-    }
-  }
-
-}
+export type ConnectionSectionCategory = IConnectionSectionCategory;
 
